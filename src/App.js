@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-loading';
 
 import Deputies from './pages/Deputies/Deputies';
 import Deputy from './pages/Deputies/Deputy/Deputy';
+import { Home } from './pages';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           element={<Deputy />}
           loading={true}
         />
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
   );
