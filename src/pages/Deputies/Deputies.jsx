@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import styles from './Deputies.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Pagination } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { getDeputies } from '../../store/api/deputiesSlice.api';
