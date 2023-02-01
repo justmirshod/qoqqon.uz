@@ -1,0 +1,63 @@
+.deputies {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.deputies * {
+  color: initial;
+  text-decoration: none;
+}
+
+.deputies .deputies__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin: 26px 0;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper_item {
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.2s;
+  padding: 20px;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper_item:hover {
+  transform: translateX(0) translateY(-0.25rem) rotate(0) skewX(0) skewY(0)
+    scaleX(1.01) scaleY(1.01);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000,
+    0 20px 25px -5px rgb(0 0 0/0.1), 0 8px 10px -6px rgb(0 0 0/0.1);
+}
+
+.deputies .deputies__wrapper .deputies__wrapper__item_img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper_item img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper__item_info {
+  display: grid;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper__item_info p {
+  color: #6b7280;
+}
+
+.deputies .deputies__wrapper .deputies__wrapper__item_info p:last-child {
+  color: #0078c8;
+}
+
+@media all and (max-width: 1100px) {
+  .deputies .deputies__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

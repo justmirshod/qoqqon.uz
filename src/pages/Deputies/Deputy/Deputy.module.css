@@ -1,0 +1,73 @@
+.deputy {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.deputy .deputy__wrapper {
+  display: flex;
+  gap: 20px;
+  margin: 26px 0;
+}
+
+.deputy .deputy__wrapper > div {
+  height: fit-content;
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+}
+
+.deputy .deputy__wrapper > div img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper_left {
+  width: 100%;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_top {
+  display: flex;
+  gap: 20px;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_top p {
+  color: rgb(107 114 128/1);
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_top p:last-child {
+  color: #0078c8;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_top > div:first-child {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_top > div:last-child {
+  display: grid;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_bottom {
+  display: grid;
+  grid-gap: 20px;
+  margin-top: 26px;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_bottom > div p:nth-child(odd) {
+  color: rgb(107 114 128/1);
+}
+
+.deputy .deputy__wrapper .deputy__wrapper__left_bottom * {
+  margin: 0;
+}
+
+.deputy .deputy__wrapper .deputy__wrapper_right {
+  width: 100%;
+}
+
+@media all and (max-width: 1100px) {
+  .deputy .deputy__wrapper {
+    flex-direction: column;
+  }
+}
