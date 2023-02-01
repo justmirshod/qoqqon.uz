@@ -3,30 +3,30 @@ import styles from './Deputies.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { getDeputies } from '../../store/api/deputiesSlice.api';
-import { Link } from 'react-router-dom';
 
 const Deputies = () => {
   const dispatch = useDispatch();
   const { isLoading, deputies } = useSelector((state) => state.deputies);
   const items = [];
 
-  for (
-    let number = 1;
-    number <= deputies?.total / deputies?.page_size;
-    number++
-  ) {
-    items.push(
-      <Pagination.Item
-        key={number}
-        active={number === deputies?.page}
-        onClick={() => dispatch(getDeputies({ page: number }))}
-      >
-        {number}
-      </Pagination.Item>
-    );
-  }
+  // for (
+  //   let number = 1;
+  //   number <= deputies?.total / deputies?.page_size;
+  //   number++
+  // ) {
+  //   items.push(
+  //     <Pagination.Item
+  //       key={number}
+  //       active={number === deputies?.page}
+  //       onClick={() => dispatch(getDeputies({ page: number }))}
+  //     >
+  //       {number}
+  //     </Pagination.Item>
+  //   );
+  // }
 
   useEffect(() => {
     dispatch(getDeputies({ page: 1 }));
@@ -52,7 +52,7 @@ const Deputies = () => {
           </Link>
         ))}
       </div>
-      <Pagination>{items}</Pagination>
+      {/* <Pagination>{items}</Pagination> */}
     </div>
   );
 };
