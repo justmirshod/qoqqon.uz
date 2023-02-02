@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-loading';
 import Deputies from './pages/Deputies/Deputies';
 import Deputy from './pages/Deputies/Deputy/Deputy';
 import { Home } from './pages';
+import News from './pages/News/News';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           loading={true}
         />
         <Route path='/' element={<Home />} />
+        <Route path='/news' element={<News />} />
       </Routes>
     </div>
   );
