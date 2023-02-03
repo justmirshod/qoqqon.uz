@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { useHttp } from '../../hooks/useHttp';
 
 const initialState = {
+  //news
   news: {},
   loading: false,
   success: null,
@@ -9,9 +11,11 @@ const initialState = {
 export const getAllNews = createAsyncThunk(
   'news/getAllNews',
   async ({ category, search, popular, page, page_size }) => {
-    return await fetch(
+    const { request } = useHttp();
+    return await request(
+      'get',
       `https://abdusamad4803.pythonanywhere.com/api/v1/blog/posts/?category=${category}&search=${search}&popular=${popular}&page=${page}&page_size=${page_size}`
-    ).then((res) => res.json());
+    );
   }
 );
 
@@ -34,5 +38,5 @@ const newsSlice = createSlice({
   },
 });
 
-const { reducer, actions } = newsSlice;
+const { reducer } = newsSlice;
 export default reducer;

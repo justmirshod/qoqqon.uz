@@ -15,3 +15,58 @@
 body {
   background-color: rgb(243 244 246/1) !important;
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: center;
+  vertical-align: middle;
+  background-color: black;
+}
+
+.icon-instagram {
+  width: 15px;
+  height: 15px;
+  mask-image: url(./assets/icons/instagram.png);
+  -webkit-mask-image: url(./assets/icons/instagram.png);
+}
+
+.icon-facebook {
+  width: 15px;
+  height: 15px;
+  mask-image: url(./assets/icons/facebook-app-symbol.png);
+  -webkit-mask-image: url(./assets/icons/facebook-app-symbol.png);
+}
+.icon-telegram {
+  width: 15px;
+  height: 15px;
+  mask-image: url(./assets/icons/telegram.png);
+  -webkit-mask-image: url(./assets/icons/telegram.png);
+}
+.icon-linkedin {
+  width: 15px;
+  height: 15px;
+  mask-image: url(./assets/icons/linkedin.png);
+  -webkit-mask-image: url(./assets/icons/linkedin.png);
+}
+.icon-prev {
+  width: 15px;
+  height: 15px;
+  background-color: #6366f1;
+  mask-image: url(./assets/icons/previous.png);
+  -webkit-mask-image: url(./assets/icons/previous.png);
+}
+
+.icon-next {
+  width: 15px;
+  height: 15px;
+  background-color: #6366f1;
+  mask-image: url(./assets/icons/next.png);
+  -webkit-mask-image: url(./assets/icons/next.png);
+}

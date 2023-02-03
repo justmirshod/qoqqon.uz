@@ -8,9 +8,13 @@ export const useHttp = () => {
         data,
         headers,
       });
+      if (response.statusText !== 'OK') {
+        console.log('sdkljf');
+        throw new Error();
+      }
       return response.data;
     } catch (e) {
-      throw e;
+      console.log(e.message);
     }
   };
   return { request };
