@@ -4,6 +4,7 @@ import Deputies from './pages/Deputies/Deputies';
 import Deputy from './pages/Deputies/Deputy/Deputy';
 import { Home } from './pages';
 import News from './pages/News/News';
+import SingleNews from './pages/SingleNews/SingleNews';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         />
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
+        <Route path='/news/:id' element={<SingleNews />} />
       </Routes>
     </div>
   );

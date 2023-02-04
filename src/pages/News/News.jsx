@@ -1,43 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllNews } from '../../store/api/newsSlice.api';
 import {
-  useNavigate,
-  createSearchParams,
-  useSearchParams,
+  // useNavigate,
+  // createSearchParams,
+  // useSearchParams,
   Link,
 } from 'react-router-dom';
 import { Container } from '../../layouts';
 import NewsItem from './NewsItem';
 import Categories from '../../components/Categories/Categories';
 import Pagination from '../../components/Pagination/Pagination';
-import {
-  setActivePage,
-  setActiveCategory,
-} from '../../store/api/categoriesSlice.api';
+import { setCategoryPageIndex } from '../../store/api/categoriesSlice.api';
+import Loader from '../../components/Loader/Loader';
 
 function News() {
   const { news, loading } = useSelector((state) => state.news);
-  const { activePageIndex, activeCategory } = useSelector(
+  const { activeCategory, categories, query } = useSelector(
     (state) => state.categories
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+
+  const handleActiveCategoryPageIndex = (activeCategory) => {
+    if (!categories.results) return;
+    const item = categories.results?.find(
+      (item) => item.slug === activeCategory
+    );
+
+    return item.activePageIndex;
+  };
+
+  const activePageIndex = handleActiveCategoryPageIndex(activeCategory);
+  console.log(activePageIndex);
 
   useEffect(() => {
+    if (activePageIndex === undefined) return;
     dispatch(
       getAllNews({
         category: activeCategory === 'all' ? '' : activeCategory,
-        search: '',
+        search: query,
         popular: '',
-        page: activePageIndex + 1,
-        page_size: 1,
+        page: activePageIndex ? activePageIndex + 1 : 1,
+        page_size: 10,
       })
     );
-
     //eslint-disable-next-line
-  }, [activePageIndex, activeCategory]);
+  }, [activePageIndex, activeCategory, query]);
 
   // const handleRouteSubmit = (e) => {
   //   e.preventDefault();
@@ -57,7 +65,11 @@ function News() {
   //   navigate(options, { replace: true });
   // };
 
-  const renderAllNews = (data) => {
+  const renderAllNews = () => {
+    if (news?.total === 0) {
+      return <h1 className='text-center'>Hech qanaqa yangilik topilmadi</h1>;
+    }
+
     return news?.results?.map((item, index) => {
       return <NewsItem key={item.id} {...item} index={index} />;
     });
@@ -78,7 +90,7 @@ function News() {
         <h1 className='section-route text-[24px] mb-[10px]'>Yangiliklar</h1>
         <div className={`section-content flex gap-20`}>
           <div className='section-content__news w-2/3 '>
-            {loading ? <h1>Loading</h1> : renderAllNews()}
+            {loading ? <Loader /> : renderAllNews()}
           </div>
 
           <div className='section-content__categories w-1/3 flex  justify-center'>
@@ -87,11 +99,12 @@ function News() {
         </div>
       </section>
       <section className='pagination flex'>
-        {news?.results ? (
+        {news?.results && !loading ? (
           <Pagination
             pageCount={handlePageCount(news)}
-            setState={setActivePage}
-            activePageIndex={activePageIndex}
+            setState={setCategoryPageIndex}
+            activePageIndex={handleActiveCategoryPageIndex(activeCategory)}
+            slug={activeCategory}
           />
         ) : null}
       </section>

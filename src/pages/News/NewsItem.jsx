@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 function NewsItem({
   translations,
@@ -10,6 +11,7 @@ function NewsItem({
   is_featured,
   views,
   index,
+  id,
 }) {
   const handleDateTime = (dateString) => {
     const months = {
@@ -90,36 +92,38 @@ function NewsItem({
   };
 
   return (
-    <div className={`news-item flex min-h-[240px] gap-4 mb-4 s`}>
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className='news-item__left-side w-1/3 bg-cover bg-center-top rounded-md'
-      ></div>
-      <div
-        className={`news-item__right-side w-2/3 flex flex-col justify-between pb-2`}
-      >
-        <div className='top-side'>
-          <div className='news-item__right-side--category'>
-            {renderCategories(categories)}
-          </div>
-          <p className='news-item__right-side--title text-[#33354d] mt-4 hover:text-[#6366f1] transition-colors duration-125 delay-75 ease-linear'>
-            {translations?.uz?.title}
-          </p>
-          <p className='news-item__right-side--description text-[#575a74] leading-6 text-[14px] mt-2'>
-            {translations?.uz?.description}
-          </p>
-        </div>
-        <div className='bottom-side'>
-          <div className='news-item__right-side--details flex text-[0.875rem] text-[#9397ad]'>
-            <p className='details-date mr-5 '>{handleDateTime(created_at)}</p>
-            <p className='detail-views'>
-              <i className='fa-solid fa-eye '></i>
-              <span className='ml-1'>{views}</span>
+    <Link to={`/news/${id}`}>
+      <div className={`news-item flex min-h-[240px] gap-4 mb-4 cursor-pointer`}>
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className='news-item__left-side w-1/3 bg-cover bg-center-top rounded-md'
+        ></div>
+        <div
+          className={`news-item__right-side w-2/3 flex flex-col justify-between pb-2`}
+        >
+          <div className='top-side'>
+            <div className='news-item__right-side--category'>
+              {renderCategories(categories)}
+            </div>
+            <p className='news-item__right-side--title text-[#33354d] mt-4 hover:text-[#6366f1] cursor-pointer transition-colors duration-125 delay-75 ease-linear'>
+              {translations?.uz?.title}
             </p>
+            <p className='news-item__right-side--description text-[#575a74] leading-6 text-[14px] mt-2'>
+              {translations?.uz?.description}
+            </p>
+          </div>
+          <div className='bottom-side'>
+            <div className='news-item__right-side--details flex text-[0.875rem] text-[#9397ad]'>
+              <p className='details-date mr-5 '>{handleDateTime(created_at)}</p>
+              <p className='detail-views'>
+                <i className='fa-solid fa-eye '></i>
+                <span className='ml-1'>{views}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

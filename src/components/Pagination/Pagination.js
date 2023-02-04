@@ -2,13 +2,11 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch } from 'react-redux';
 
-function Pagination({ pageCount, setState, activePageIndex }) {
+function Pagination({ pageCount, setState, activePageIndex, slug }) {
   const dispatch = useDispatch();
-  console.log(activePageIndex);
-  console.log(pageCount);
 
   const handlePageClick = (event) => {
-    dispatch(setState(event.selected));
+    dispatch(setState({ slug, index: event.selected }));
   };
 
   return (

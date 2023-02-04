@@ -5,22 +5,23 @@ import {
   getAllCategories,
   setActiveCategory,
   setActivePage,
+  setQuery,
 } from '../../store/api/categoriesSlice.api';
 
+import { getAllNews } from '../../store/api/newsSlice.api';
+
 function Categories() {
-  const { news } = useSelector((state) => state.news);
   const { categories, loadingCat, activeCategory } = useSelector(
     (state) => state.categories
   );
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!news.results) return;
     if (categories.results) return;
     dispatch(getAllCategories());
 
     //eslint-disable-next-line
-  }, [news]);
+  }, []);
 
   const renderCategories = (categories) => {
     return categories?.results?.map((item) => {
@@ -53,29 +54,25 @@ function Categories() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            const data = new FormData(e.target);
+
+            dispatch(setQuery(data.get('query')));
           }}
         >
           <input
             className='bg-[transparent] border rounded-md border-[#e2e5f1]  focus:outline-none  focus:shadow-searchShadow focus:border-[#6366f159] text-[14px] px-2 py-3  pr-9  w-full transition-shadow duration-125 delay-74 ease-linear'
             type='text'
             placeholder='Qidiruv'
+            name='query'
           />
         </form>
-        <i className='fa-solid fa-search absolute top-[30%] right-[12px] cursor-pointer'></i>
+        <button type='submit' className='inline-block'>
+          <i className='fa-solid fa-search absolute top-[18px] right-[12px] cursor-pointer'></i>
+        </button>
       </div>
       <div className='categories-list mt-5 p-4 pt-6 border rounded-md border-[#e2e5f1]'>
         <p className='section-header pb-4 text-[22px] '>Kategoriyalar</p>
-        <p
-          onClick={() => {
-            dispatch(setActivePage(0));
-            dispatch(setActiveCategory('all'));
-          }}
-          className={`text-[14px] mb-1 cursor-pointer hover:text-[#6366f1] ${
-            activeCategory === 'all' ? 'text-[#6366f1]' : null
-          }`}
-        >
-          Hammasi
-        </p>
+
         {renderCategories(categories)}
       </div>
       <div className='social-links mt-5 p-4 pt-6 border rounded-md border-[#e2e5f1]'>
