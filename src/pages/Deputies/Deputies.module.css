@@ -94,4 +94,11 @@
     display: flex;
     justify-content: center;
   }
+
+  .deputies
+    .deputies__wrapper
+    .deputies__wrapper_item
+    .deputies__wrapper__item_info {
+    grid-gap: 10px;
+  }
 }
