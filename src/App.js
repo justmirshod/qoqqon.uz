@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-loading';
 
 import Deputies from './pages/Deputies/Deputies';
 import Deputy from './pages/Deputies/Deputy/Deputy';
+import News from './pages/News/News';
+import SingleNews from './pages/SingleNews/SingleNews';
 
 import GeneralInfo from './pages/GeneralInfo/GeneralInfo';
 import InterestingPlaces from './pages/InterestingPlaces/InterestingPlaces';
@@ -9,7 +11,6 @@ import Place from './pages/InterestingPlaces/Place/Place';
 import { Home } from './pages';
 import { Navbar, UniversalRoute } from './components';
 import { v4 } from 'uuid';
-
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
 function App() {
@@ -78,6 +79,22 @@ function App() {
                   </UniversalRoute>
                 }
                 loading={true}
+              />
+              <Route
+                path={handleRoutes(lang, '/news')}
+                element={
+                  <UniversalRoute>
+                    <News />
+                  </UniversalRoute>
+                }
+              />
+              <Route
+                path={handleRoutes(lang, '/news/:id')}
+                element={
+                  <UniversalRoute>
+                    <SingleNews />
+                  </UniversalRoute>
+                }
               />
             </div>
           );

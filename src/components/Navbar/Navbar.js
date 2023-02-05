@@ -225,8 +225,6 @@ const routes = {
 };
 
 const Navbar = () => {
-  const scrollHeight = document;
-  console.log(scrollHeight);
   const { isLangLoading, activeLang, activeTheme, showLangs } = useSelector(
     (state) => state.language
   );
