@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { baseURL } from '../config/config';
+
 export const useHttp = () => {
   const axiosInstance = axios.create({
     baseURL,
@@ -17,8 +18,9 @@ export const useHttp = () => {
         throw new Error(`Could not fetch ${url}, status ${response.status}`);
       }
       return response.data;
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
+      return error;
     }
   };
   return { request };

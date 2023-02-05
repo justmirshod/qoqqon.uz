@@ -11,6 +11,7 @@ import placesSlice from './api/placesSlice';
 import categoriesSlice from './api/categoriesSlice';
 import langSlice from '../components/Navbar/navbar_slice';
 
+import map from '../pages/Map/MapSlice';
 
 const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
     newsCategories: newsCategoriesSlice,
     singleNews: singleNewsSlice,
     moreNews: moreNewsSlice,
+    map,
   },
 });
 

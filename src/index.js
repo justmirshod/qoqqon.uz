@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 
 import store from './store/store';
 import 'react-pagination-bar/dist/index.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
