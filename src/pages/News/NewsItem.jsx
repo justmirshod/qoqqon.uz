@@ -1,11 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { replaceKrill } from '../../config/config';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setActiveCategory } from '../../store/api/categoriesSlice.api';
 
 function NewsItem({ translations, categories, image, created_at, views, id }) {
   const { activeLang } = useSelector((state) => state.language);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleDateTime = (dateString) => {
     const months = {
@@ -65,7 +68,7 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
     const colors = ['red', 'yellow', 'blue', 'green'];
     return categoryList?.map((item) => {
       const itemClassname = classNames(
-        'news-item__category text-white inline-block p-1 rounded-[5px] text-[13px] mr-3',
+        'news-item__category text-white inline-block p-1 rounded-[5px] text-[13px] mr-3 cursor-pointer',
         {
           'bg-[#22C55E] shadow-md shadow-[#22C55E]':
             item.id % colors.length === 0,
@@ -78,7 +81,13 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
         }
       );
       return (
-        <div key={item.id} className={itemClassname}>
+        <div
+          onClick={() => {
+            dispatch(setActiveCategory(item.slug));
+          }}
+          key={item.id}
+          className={itemClassname}
+        >
           {item?.translations?.uz?.name}
         </div>
       );
@@ -86,38 +95,42 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
   };
 
   return (
-    <Link to={replaceKrill(activeLang) + `/news/${id}`}>
-      <div className={`news-item flex min-h-[240px] gap-4 mb-4 cursor-pointer`}>
-        <div
-          style={{ backgroundImage: `url(${image})` }}
-          className='news-item__left-side w-1/3 bg-cover bg-center-top rounded-md'
-        ></div>
-        <div
-          className={`news-item__right-side w-2/3 flex flex-col justify-between pb-2`}
-        >
-          <div className='top-side'>
-            <div className='news-item__right-side--category'>
-              {renderCategories(categories)}
-            </div>
+    <div className={`news-item flex min-h-[240px] gap-4 mb-4 `}>
+      <div
+        style={{ backgroundImage: `url(${image})` }}
+        className='news-item__left-side w-1/3 bg-cover bg-center-top rounded-md cursor-pointer'
+        onClick={() => {
+          navigate(replaceKrill(activeLang) + `/news/${id}`);
+        }}
+      ></div>
+      <div
+        className={`news-item__right-side w-2/3 flex flex-col justify-between pb-2`}
+      >
+        <div className='top-side'>
+          <div className='news-item__right-side--category'>
+            {renderCategories(categories)}
+          </div>
+          <Link to={replaceKrill(activeLang) + `/news/${id}`}>
             <p className='news-item__right-side--title text-[#33354d] mt-4 hover:text-[#6366f1] cursor-pointer transition-colors duration-125 delay-75 ease-linear'>
               {translations?.uz?.title}
             </p>
-            <p className='news-item__right-side--description text-[#575a74] leading-6 text-[14px] mt-2'>
-              {translations?.uz?.description}
+          </Link>
+
+          <p className='news-item__right-side--description text-[#575a74] leading-6 text-[14px] mt-2'>
+            {translations?.uz?.description}
+          </p>
+        </div>
+        <div className='bottom-side'>
+          <div className='news-item__right-side--details flex text-[0.875rem] text-[#9397ad]'>
+            <p className='details-date mr-5 '>{handleDateTime(created_at)}</p>
+            <p className='detail-views'>
+              <i className='fa-solid fa-eye '></i>
+              <span className='ml-1'>{views}</span>
             </p>
-          </div>
-          <div className='bottom-side'>
-            <div className='news-item__right-side--details flex text-[0.875rem] text-[#9397ad]'>
-              <p className='details-date mr-5 '>{handleDateTime(created_at)}</p>
-              <p className='detail-views'>
-                <i className='fa-solid fa-eye '></i>
-                <span className='ml-1'>{views}</span>
-              </p>
-            </div>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

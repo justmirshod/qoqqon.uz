@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getAllCategories,
   setActiveCategory,
-  setActivePage,
+  setCategoryPageIndex,
   setQuery,
 } from '../../store/api/categoriesSlice.api';
-
-import { getAllNews } from '../../store/api/newsSlice.api';
 
 function Categories() {
   const { categories, loadingCat, activeCategory } = useSelector(
@@ -34,7 +32,6 @@ function Categories() {
       return (
         <p
           onClick={() => {
-            dispatch(setActivePage(0));
             dispatch(setActiveCategory(item.slug));
           }}
           key={item.id}
@@ -57,6 +54,7 @@ function Categories() {
             const data = new FormData(e.target);
 
             dispatch(setQuery(data.get('query')));
+            dispatch(setCategoryPageIndex({ slug: activeCategory, index: 0 }));
           }}
         >
           <input

@@ -4,6 +4,7 @@ import { useHttp } from '../../hooks/useHttp';
 const initialState = {
   singleNews: {},
   loading: false,
+  success: null,
 };
 
 export const fetchSingleNews = createAsyncThunk(
@@ -23,10 +24,15 @@ const singleNewsSlice = createSlice({
     builder
       .addCase(fetchSingleNews.pending, (state) => {
         state.loading = true;
+        state.success = null;
       })
       .addCase(fetchSingleNews.fulfilled, (state, action) => {
         state.singleNews = action.payload;
         state.loading = false;
+        state.success = true;
+      })
+      .addCase(fetchSingleNews.rejected, (state) => {
+        state.success = false;
       });
   },
 });
