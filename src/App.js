@@ -12,44 +12,68 @@ import { v4 } from 'uuid';
 
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
-
 function App() {
+  const handleRoutes = (lang, path) => {
+    return lang === 'ўз' ? path : `/${lang}${path}`;
+  };
+
   return (
     <div className='App'>
       <Navbar />
       <Routes maxLoadingTime={1000}>
-        <Route path='/kengash-deputies' element={<Deputies />} loading={true} />
-        <Route
-          path='/kengash-deputies/:deputy'
-          element={<Deputy />}
-          loading={true}
-        />
-
-        <Route path='/general-info' element={<GeneralInfo />} loading={true} />
-        <Route
-          path='/interesting-places'
-          element={<InterestingPlaces />}
-          loading={true}
-        />
-        <Route
-          path='/interesting-places/:id'
-          element={<Place />}
-          loading={true}
-        />
-        {languages.map((item) => {
+        {languages.map((lang) => {
           return (
-            <Route
-              key={v4()}
-              path={item === 'ўз' ? '/' : `/${item}`}
-              element={
-                <UniversalRoute>
-                  <Home />
-                </UniversalRoute>
-              }
-            />
+            <div key={v4()}>
+              <Route
+                // path={item === 'ўз' ? '/' : `/${item}`}
+                path={handleRoutes(lang, '/')}
+                element={
+                  <UniversalRoute>
+                    <Home />
+                  </UniversalRoute>
+                }
+              />
+              <Route
+                path={handleRoutes(lang, '/interesting-places/:id')}
+                element={
+                  <UniversalRoute>
+                    <Place />
+                  </UniversalRoute>
+                }
+                loading={true}
+              />
+              <Route
+                path={handleRoutes(lang, '/kengash-deputies')}
+                element={
+                  <UniversalRoute>
+                    <Deputies />
+                  </UniversalRoute>
+                }
+                loading={true}
+              />
+              <Route
+                path={handleRoutes(lang, '/kengash-deputies/:deputy')}
+                element={
+                  <UniversalRoute>
+                    <Deputy />
+                  </UniversalRoute>
+                }
+                loading={true}
+              />
+
+              <Route
+                path='/general-info'
+                element={<GeneralInfo />}
+                loading={true}
+              />
+              <Route
+                path='/interesting-places'
+                element={<InterestingPlaces />}
+                loading={true}
+              />
+            </div>
           );
         })}
-
       </Routes>
     </div>
   );

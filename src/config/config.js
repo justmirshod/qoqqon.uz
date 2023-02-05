@@ -1,3 +1,11 @@
 const baseURL = 'https://abdusamad4803.pythonanywhere.com';
 
-export { baseURL };
+const replaceKrill = (lang) => {
+  if (lang === 'ўз') {
+    return '';
+  } else {
+    return lang;
+  }
+};
+
+export { baseURL, replaceKrill };

@@ -80,7 +80,7 @@ const routes = {
       links: [
         {
           name: 'Tuman deputatlari',
-          link: 'uz/district-deputies',
+          link: 'uz/kengash-deputies',
         },
         {
           name: 'Qabul qilingan hujjatlar',
@@ -192,7 +192,7 @@ const routes = {
       links: [
         {
           name: 'Туман депутатлари',
-          link: '/district-deputies',
+          link: '/kengash-deputies',
         },
         {
           name: 'Қабул қилинган ҳужжатлар',
