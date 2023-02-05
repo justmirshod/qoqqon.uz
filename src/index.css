@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -27,7 +26,6 @@ body {
   -webkit-mask-size: 100%;
   -webkit-mask-position: center;
   vertical-align: middle;
-  background-color: black;
 }
 
 .icon-instagram {
@@ -69,6 +67,27 @@ body {
   background-color: #6366f1;
   mask-image: url(./assets/icons/next.png);
   -webkit-mask-image: url(./assets/icons/next.png);
+}
+
+.icon-phone {
+  width: 25px;
+  height: 25px;
+  mask-image: url(./assets/icons/phone-call.png);
+  -webkit-mask-image: url(./assets/icons/phone-call.png);
+}
+
+.icon-location {
+  width: 25px;
+  height: 25px;
+  mask-image: url(./assets/icons/location-pin.png);
+  -webkit-mask-image: url(./assets/icons/location-pin.png);
+}
+
+.icon-not-found {
+  width: 100px;
+  height: 100px;
+  mask-image: url(./assets/icons/browser.png);
+  -webkit-mask-image: url(./assets/icons/browser.png);
 }
 
 .news-all__content {
