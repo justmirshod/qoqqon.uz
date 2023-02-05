@@ -110,7 +110,7 @@ const routes = {
           link: '/uz/indicator',
         },
         {
-          name: 'Qiziqarli saytlar',
+          name: 'Qiziqarli joylar',
           link: 'uz/interesting-places',
         },
         {
@@ -120,42 +120,149 @@ const routes = {
       ],
     },
   ],
-};
-
-const kr = {
-  name: 'Ҳокимият ҳақида',
-  links: [
-    'Мақсад ва вазифалари',
-    'Раҳбарият',
-    'Aппарат',
-    'Таркибий тузилма',
-    'Фуқароларни қабул қииш тартиби',
-    'Туман тасарруфидаги ташкилотлар',
-    'Ҳокимнинг ёрдамчилари',
-    'Бўш иш ўринлари',
+  ўз: [
+    {
+      name: 'Ҳокимият ҳақида',
+      links: [
+        {
+          name: 'Мақсад ва вазифалари',
+          link: '/goals-and-objectives',
+        },
+        {
+          name: 'Раҳбарият',
+          link: '/management',
+        },
+        {
+          name: 'Aппарат',
+          link: '/apparats',
+        },
+        {
+          name: 'Таркибий тузилма',
+          link: '/structure',
+        },
+        {
+          name: 'Фуқароларни қабул қииш тартиби',
+          link: '/procedure',
+        },
+        {
+          name: 'Туман тасарруфидаги ташкилотлар',
+          link: '/subdivisions',
+        },
+        {
+          name: 'Ҳокимнинг ёрдамчилари',
+          link: '/manager-asistantas',
+        },
+        {
+          name: 'Бўш иш ўринлари',
+          link: '/vacancies',
+        },
+      ],
+    },
+    {
+      name: 'Aхборот хизмати',
+      links: [
+        {
+          name: 'Янгииликлар',
+          link: '/news',
+        },
+        {
+          name: 'ОAВ биз ҳақимизда',
+          link: 'mass-media-abou-us',
+        },
+        {
+          name: 'Статистика',
+          link: '/statistics',
+        },
+        {
+          name: 'Инфографика',
+          link: '/infografic',
+        },
+        {
+          name: 'Фотожамланмалар',
+          link: '/photo-galery',
+        },
+        {
+          name: 'Видеожамланмалар',
+          link: '/video-galery',
+        },
+      ],
+    },
+    {
+      name: 'Депутатлар кенгаши',
+      links: [
+        {
+          name: 'Туман депутатлари',
+          link: '/district-deputies',
+        },
+        {
+          name: 'Қабул қилинган ҳужжатлар',
+          link: '/accepted/documents',
+        },
+      ],
+    },
+    {
+      name: 'Туман',
+      links: [
+        {
+          name: 'Умумий маълумот',
+          link: '/general-information',
+        },
+        {
+          name: 'Туман рейтинги',
+          link: '/indicator',
+        },
+        {
+          name: 'Қизиқарли жойлар',
+          link: '/interesting-places',
+        },
+        {
+          name: 'Туман харитаси',
+          link: '/map',
+        },
+      ],
+    },
   ],
 };
 
 const Navbar = () => {
+  const scrollHeight = document;
+  console.log(scrollHeight);
   const { isLangLoading, activeLang, activeTheme, showLangs } = useSelector(
     (state) => state.language
   );
   const dispatch = useDispatch();
   return (
-    <div className='bg-[#fff]'>
+    <div className={`bg-[#fff] fixed w-full z-20`}>
       {isLangLoading ? (
         'Loading...'
       ) : (
         <Container>
           <div className='flex items-center py-4'>
-            <Link to='/' className='flex items-center mr-6 w-1/5'>
+            <Link
+              to={
+                activeLang === 'uz'
+                  ? '/uz'
+                  : activeLang === 'ru'
+                  ? '/ru'
+                  : activeLang === 'en'
+                  ? '/en'
+                  : '/'
+              }
+              className='flex items-center mr-6 w-1/5'
+            >
               <img
                 src={logo_icon}
                 className='inline-block w-[60px] h-[60px]'
                 alt=''
               />
               <p className='max-w-[150px] text-lg font-semibold ml-3'>
-                Qo'qon shahar hokimligi
+                {activeLang === 'ўз'
+                  ? 'Қўқон шаҳар ҳокимлиги'
+                  : activeLang === 'uz'
+                  ? "Qo'qon shahar hokimligi"
+                  : activeLang === 'en'
+                  ? 'Kokan city administration'
+                  : 'Администрация города Кокан'}
               </p>
             </Link>
             <ul className='flex items-center justify-between w-4/5'>
@@ -237,7 +344,13 @@ const Navbar = () => {
                     to={`/${activeLang}/contacts`}
                     className='text-[#fff] text-center'
                   >
-                    Bog'lanish
+                    {activeLang === 'ўз'
+                      ? 'Боғланиш'
+                      : activeLang === 'uz'
+                      ? "Bog'lanish"
+                      : activeLang === 'en'
+                      ? 'Contact'
+                      : 'Контакт'}
                   </Link>
                 </button>
               </div>

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isLangLoading: false,
-  activeLang: 'uz',
+  activeLang: 'ўз',
   activeTheme: 'light',
   showLangs: false,
 };
@@ -12,9 +12,7 @@ export const langSlice = createSlice({
   initialState,
   reducers: {
     setLang: (state, { payload }) => {
-      state.isLangLoading = true;
       state.activeLang = payload;
-      state.isLangLoading = false;
     },
     setTheme: (state, { payload }) => {
       state.activeTheme = payload;
