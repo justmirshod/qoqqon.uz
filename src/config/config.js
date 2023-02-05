@@ -8,4 +8,9 @@ const replaceKrill = (lang) => {
   }
 };
 
-export { baseURL, replaceKrill };
+const adaptToLanguage = (lang) => {
+  if (lang === 'ўз') return 'uz';
+  else return lang;
+};
+
+export { baseURL, replaceKrill, adaptToLanguage };
