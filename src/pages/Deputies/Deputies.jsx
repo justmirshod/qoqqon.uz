@@ -31,7 +31,7 @@ const Deputies = () => {
         <div className={styles.deputies__wrapper}>
           {deputies?.results?.map((d) => (
             <Link
-              to={replaceKrill(activeLang) + `/kengash-deputies/${d?.id}`}
+              to={`${replaceKrill(activeLang)}/kengash-deputies/${d?.id}`}
               key={d?.id}
             >
               <div className={styles.deputies__wrapper_item}>

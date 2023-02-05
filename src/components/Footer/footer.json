@@ -1,0 +1,22 @@
+{
+  "ministryName": {
+    "uz": "Qo'qon shahar hokimligi",
+    "en": "Kokan city administration",
+    "ru": "Администрация города Кокан",
+    "ўз": "Қўқон шаҳар ҳокимлиги"
+  },
+
+  "developerTeam": {
+    "uz": "S-orca kompaniyasi tomonidan ishlab chiqildi",
+    "en": "Develpoed by S-orca company",
+    "ru": "Разработано S-orca",
+    "ўз": "S-orca компанияси томонидан ишлаб чиқилди"
+  },
+
+  "endingSentence": {
+    "uz": "Farg'ona viloyati Qo'qon shahar hokimligi 2023",
+    "en": "Fergana region Kokand city administration 2023",
+    "ru": "Ферганская область Кокандский городской хокимият 2023",
+    "ўз": "Фарғона вилояти Қўқон шаҳар ҳокимлиги 2023"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "uz": [
+    {
+      "name": "Hokimiyat haqida",
+      "links": [
+        {
+          "name": "Maqsad va vazifalari",
+          "link": "uz/goals-and-objectives"
+        },
+        {
+          "name": "Rahbariyat",
+          "link": "uz/management"
+        },
+        {
+          "name": "Apparat",
+          "link": "uz/apparats"
+        },
+        {
+          "name": "Tarkibiy tuzilma",
+          "link": "uz/structure"
+        },
+        {
+          "name": "Fuqarolarni qabul qiish tartibi",
+          "link": "uz/procedure"
+        },
+        {
+          "name": "Tuman tasarrufidagi tashkilotlar",
+          "link": "uz/subdivisions"
+        },
+        {
+          "name": "Hokimning yordamchilari",
+          "link": "uz/manager-asistants"
+        },
+        {
+          "name": "Bo'sh ish o'rinlari",
+          "link": "uz/vacancies"
+        }
+      ]
+    },
+    {
+      "name": "Axborot xizmati",
+      "links": [
+        {
+          "name": "Yangiliklar",
+          "link": "uz/news"
+        },
+        {
+          "name": "OAV biz haqimizda",
+          "link": "uz/mass-media-about-us"
+        },
+        {
+          "name": "Statistika",
+          "link": "uz/statistics"
+        },
+        {
+          "name": "Infografika",
+          "link": "uz/infografic"
+        },
+        {
+          "name": "Fotojamlanmalar",
+          "link": "uz/photo-galery"
+        },
+        {
+          "name": "Videojamlanmalar",
+          "link": "uz/video-galery"
+        }
+      ]
+    },
+    {
+      "name": "Deputatlar kengashi",
+      "links": [
+        {
+          "name": "Tuman deputatlari",
+          "link": "uz/kengash-deputies"
+        },
+        {
+          "name": "Qabul qilingan hujjatlar",
+          "link": "uz/accepted-documents"
+        }
+      ]
+    },
+    {
+      "name": "Tuman",
+      "links": [
+        {
+          "name": "Umumiy ma'lumot",
+          "link": "uz/general-information"
+        },
+        {
+          "name": "Tuman reytingi",
+          "link": "/uz/indicator"
+        },
+        {
+          "name": "Qiziqarli joylar",
+          "link": "uz/interesting-places"
+        },
+        {
+          "name": "Tuman xaritasi",
+          "link": "uz/map"
+        }
+      ]
+    }
+  ],
+  "ўз": [
+    {
+      "name": "Ҳокимият ҳақида",
+      "links": [
+        {
+          "name": "Мақсад ва вазифалари",
+          "link": "/goals-and-objectives"
+        },
+        {
+          "name": "Раҳбарият",
+          "link": "/management"
+        },
+        {
+          "name": "Aппарат",
+          "link": "/apparats"
+        },
+        {
+          "name": "Таркибий тузилма",
+          "link": "/structure"
+        },
+        {
+          "name": "Фуқароларни қабул қииш тартиби",
+          "link": "/procedure"
+        },
+        {
+          "name": "Туман тасарруфидаги ташкилотлар",
+          "link": "/subdivisions"
+        },
+        {
+          "name": "Ҳокимнинг ёрдамчилари",
+          "link": "/manager-asistantas"
+        },
+        {
+          "name": "Бўш иш ўринлари",
+          "link": "/vacancies"
+        }
+      ]
+    },
+    {
+      "name": "Aхборот хизмати",
+      "links": [
+        {
+          "name": "Янгииликлар",
+          "link": "/news"
+        },
+        {
+          "name": "ОAВ биз ҳақимизда",
+          "link": "mass-media-abou-us"
+        },
+        {
+          "name": "Статистика",
+          "link": "/statistics"
+        },
+        {
+          "name": "Инфографика",
+          "link": "/infografic"
+        },
+        {
+          "name": "Фотожамланмалар",
+          "link": "/photo-galery"
+        },
+        {
+          "name": "Видеожамланмалар",
+          "link": "/video-galery"
+        }
+      ]
+    },
+    {
+      "name": "Депутатлар кенгаши",
+      "links": [
+        {
+          "name": "Туман депутатлари",
+          "link": "/kengash-deputies"
+        },
+        {
+          "name": "Қабул қилинган ҳужжатлар",
+          "link": "/accepted/documents"
+        }
+      ]
+    },
+    {
+      "name": "Туман",
+      "links": [
+        {
+          "name": "Умумий маълумот",
+          "link": "/general-information"
+        },
+        {
+          "name": "Туман рейтинги",
+          "link": "/indicator"
+        },
+        {
+          "name": "Қизиқарли жойлар",
+          "link": "/interesting-places"
+        },
+        {
+          "name": "Туман харитаси",
+          "link": "/map"
+        }
+      ]
+    }
+  ]
+}
