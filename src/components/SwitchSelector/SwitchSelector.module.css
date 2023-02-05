@@ -1,0 +1,9 @@
+.switch__selector {
+  display: flex;
+  gap: 20px;
+  margin: 26px 0;
+}
+
+.switch__selector_item {
+  font-size: 18px;
+}

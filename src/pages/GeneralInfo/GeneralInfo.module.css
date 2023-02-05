@@ -1,0 +1,111 @@
+.general__info {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.general__info .general__info_wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.general__info .general__info_wrapper p {
+  margin-top: 26px;
+}
+
+.general__info .general__info_wrapper > div {
+  width: 100%;
+}
+.general__info .general__info__wrapper_right img {
+  border-radius: 12px;
+}
+
+.general__info
+  .general__info_wrapper
+  .general__info__wrapper__right_statistics {
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 26px;
+}
+
+.general__info
+  .general__info_wrapper
+  .general__info__wrapper__right_statistics
+  .general__info__wrapper__right_populations {
+  display: grid;
+}
+
+.general__info
+  .general__info_wrapper
+  .general__info__wrapper__right_statistics
+  .general__info__wrapper__right_populations
+  .general__info__wrapper__right__populations_item
+  .general__info__wrapper__right__populations__item_count {
+  border-radius: 8px;
+  background-color: #0078c8;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.general__info
+  .general__info_wrapper
+  .general__info__wrapper__right_statistics
+  .general__info__wrapper__right_populations
+  .general__info__wrapper__right__populations_item
+  .general__info__wrapper__right__populations__item_count
+  * {
+  margin: 0;
+}
+
+.general__info .general__info_bottom {
+  margin: 26px 0;
+}
+
+.general__info .general__info_bottom .general__info__bottom_places {
+  width: 100%;
+  display: grid;
+  grid-gap: 40px;
+  margin: 26px auto;
+}
+
+.general__info
+  .general__info_bottom
+  .general__info__bottom_places
+  .general__info__bottom__places_item {
+  width: fit-content;
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.general__info
+  .general__info_bottom
+  .general__info__bottom_places
+  .general__info__bottom__places_item
+  > div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 26px;
+}
+
+.general__info
+  .general__info_bottom
+  .general__info__bottom_places
+  .general__info__bottom__places_item
+  > div
+  > div {
+  text-align: center;
+}
+
+.general__info
+  .general__info_bottom
+  .general__info__bottom_places
+  .general__info__bottom__places_item
+  > div
+  > div
+  *:not(img) {
+  margin-top: 16px;
+}

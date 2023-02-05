@@ -1,31 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Deputies.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Pagination } from 'react-pagination-bar';
 
 import { getDeputies } from '../../store/api/deputiesSlice.api';
 
 const Deputies = () => {
   const dispatch = useDispatch();
   const { isLoading, deputies } = useSelector((state) => state.deputies);
-  const items = [];
+  const [curPage, setCurPage] = useState(1);
 
-  // for (
-  //   let number = 1;
-  //   number <= deputies?.total / deputies?.page_size;
-  //   number++
-  // ) {
-  //   items.push(
-  //     <Pagination.Item
-  //       key={number}
-  //       active={number === deputies?.page}
-  //       onClick={() => dispatch(getDeputies({ page: number }))}
-  //     >
-  //       {number}
-  //     </Pagination.Item>
-  //   );
-  // }
+  const handleChange = (pageNum) => {
+    setCurPage(pageNum);
+    dispatch(getDeputies({ page: pageNum }));
+  };
 
   useEffect(() => {
     dispatch(getDeputies({ page: 1 }));
@@ -51,7 +41,14 @@ const Deputies = () => {
           </Link>
         ))}
       </div>
-      {/* <Pagination>{items}</Pagination> */}
+      <Pagination
+        currentPage={curPage}
+        itemsPerPage={deputies?.page_size}
+        onPageChange={(pageNumber) => handleChange(pageNumber)}
+        totalItems={deputies?.total}
+        pageNeighbours={2}
+        onlyPageNumbers={true}
+      />
     </div>
   );
 };
