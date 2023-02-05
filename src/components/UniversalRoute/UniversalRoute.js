@@ -16,5 +16,5 @@ export default function UniversalRoute({ children, path, element, item }) {
     }
   }, [location.pathname]);
 
-  return <>{children}</>;
+  return <div className=''>{children}</div>;
 }

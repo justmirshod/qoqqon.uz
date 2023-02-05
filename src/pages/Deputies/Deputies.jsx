@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { Pagination } from 'react-pagination-bar';
 
 import { getDeputies } from '../../store/api/deputiesSlice.api';
+import { Container } from '../../layouts';
 
 const Deputies = () => {
   const dispatch = useDispatch();
@@ -24,37 +25,39 @@ const Deputies = () => {
   }, []);
 
   return (
-    <div className={styles.deputies}>
-      <h3>Депутаты районного Кенгаша</h3>
-      <div className={styles.deputies__wrapper}>
-        {deputies?.results?.map((d) => (
-          <Link
-            to={`/${replaceKrill(activeLang)}/kengash-deputies/${d?.id}`}
-            key={d?.id}
-          >
-            <div className={styles.deputies__wrapper_item}>
-              <div className={styles.deputies__wrapper__item_img}>
-                <img src={d?.image} alt='' />
+    <Container>
+      <div className={styles.deputies}>
+        <h3>Депутаты районного Кенгаша</h3>
+        <div className={styles.deputies__wrapper}>
+          {deputies?.results?.map((d) => (
+            <Link
+              to={replaceKrill(activeLang) + `/kengash-deputies/${d?.id}`}
+              key={d?.id}
+            >
+              <div className={styles.deputies__wrapper_item}>
+                <div className={styles.deputies__wrapper__item_img}>
+                  <img src={d?.image} alt='' />
+                </div>
+                <div className={styles.deputies__wrapper__item_info}>
+                  <h5>{d?.translations?.ru?.full_name}</h5>
+                  <p>{d?.translations?.ru?.partiya}</p>
+                  <p>{d?.translations?.ru?.okrug}</p>
+                  <p>{d?.phone_number}</p>
+                </div>
               </div>
-              <div className={styles.deputies__wrapper__item_info}>
-                <h5>{d?.translations?.ru?.full_name}</h5>
-                <p>{d?.translations?.ru?.partiya}</p>
-                <p>{d?.translations?.ru?.okrug}</p>
-                <p>{d?.phone_number}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
+        <Pagination
+          currentPage={curPage}
+          itemsPerPage={deputies?.page_size}
+          onPageChange={(pageNumber) => handleChange(pageNumber)}
+          totalItems={deputies?.total}
+          pageNeighbours={2}
+          onlyPageNumbers={true}
+        />
       </div>
-      <Pagination
-        currentPage={curPage}
-        itemsPerPage={deputies?.page_size}
-        onPageChange={(pageNumber) => handleChange(pageNumber)}
-        totalItems={deputies?.total}
-        pageNeighbours={2}
-        onlyPageNumbers={true}
-      />
-    </div>
+    </Container>
   );
 };
 

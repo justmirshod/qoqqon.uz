@@ -1,6 +1,5 @@
 .deputy {
-  width: 95%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .deputy .deputy__wrapper {
@@ -105,7 +104,11 @@
     max-height: 180px;
   }
 
-  .deputy .deputy__wrapper .deputy__wrapper_left .deputy__wrapper__left_top > div:last-child {
+  .deputy
+    .deputy__wrapper
+    .deputy__wrapper_left
+    .deputy__wrapper__left_top
+    > div:last-child {
     grid-gap: 10px;
   }
 }

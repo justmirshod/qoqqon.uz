@@ -232,7 +232,7 @@ const Navbar = () => {
   );
   const dispatch = useDispatch();
   return (
-    <div className={`bg-[#fff] fixed w-full z-20`}>
+    <div className={`bg-[#fff] sticky top-0 w-full z-20 shadow-lg`}>
       {isLangLoading ? (
         'Loading...'
       ) : (

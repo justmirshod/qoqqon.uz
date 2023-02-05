@@ -4,7 +4,7 @@ const replaceKrill = (lang) => {
   if (lang === 'ўз') {
     return '';
   } else {
-    return lang;
+    return '/' + lang;
   }
 };
 

@@ -62,13 +62,21 @@ function App() {
               />
 
               <Route
-                path='/general-info'
-                element={<GeneralInfo />}
+                path={handleRoutes(lang, '/general-info')}
+                element={
+                  <UniversalRoute>
+                    <GeneralInfo />
+                  </UniversalRoute>
+                }
                 loading={true}
               />
               <Route
-                path='/interesting-places'
-                element={<InterestingPlaces />}
+                path={handleRoutes(lang, '/interesting-places')}
+                element={
+                  <UniversalRoute>
+                    <InterestingPlaces />
+                  </UniversalRoute>
+                }
                 loading={true}
               />
             </div>
