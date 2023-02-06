@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllNews } from '../../store/api/newsSlice.api';
 import {
@@ -19,6 +19,8 @@ function News() {
   const { activeCategory, categories, query } = useSelector(
     (state) => state.newsCategories
   );
+  const [showFilters, setShowFilter] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleActiveCategoryPageIndex = (activeCategory) => {
@@ -34,13 +36,14 @@ function News() {
 
   useEffect(() => {
     if (activePageIndex === undefined) return;
+    setShowFilter(false);
     dispatch(
       getAllNews({
         category: activeCategory === 'all' ? '' : activeCategory,
         search: query,
         popular: '',
         page: activePageIndex ? activePageIndex + 1 : 1,
-        page_size: 10,
+        page_size: 1,
       })
     );
     //eslint-disable-next-line
@@ -79,35 +82,59 @@ function News() {
   };
 
   return (
-    <Container className='relative'>
-      <h1 className='page-route text-[#797f8c] my-[20px] text-[18px]'>
-        <Link to={'/'}>Bosh sahifa </Link>
-        <span>{'>'}</span>
-        <Link to={'/news'}> Yangiliklar</Link>
-      </h1>
-      <section className='allnews-container'>
-        <h1 className='section-route text-[24px] mb-[10px]'>Yangiliklar</h1>
-        <div className={`section-content flex gap-20`}>
-          <div className='section-content__news w-2/3 '>
-            {loading ? <Loader /> : renderAllNews()}
-          </div>
+    <>
+      <Container
+        className={`min-[0px]:static lg:relative px-4  ${
+          showFilters ? 'h-screen overflow-hidden' : ''
+        }`}
+      >
+        <h1 className='page-route text-[#797f8c] my-[20px] text-[18px]'>
+          <Link to={'/'}>Bosh sahifa </Link>
+          <span>{'>'}</span>
+          <Link to={'/news'}> Yangiliklar</Link>
+        </h1>
+        <section className='allnews-container w-full '>
+          <h1 className='section-route text-[24px] mb-[10px]'>Yangiliklar</h1>
+          <div className={`section-content flex gap-20 `}>
+            <div className='section-content__news  lg:w-3/4  sm:w-full'>
+              {loading ? <Loader /> : renderAllNews()}
+            </div>
 
-          <div className='section-content__categories w-1/3 flex  justify-center'>
-            <Categories />
+            <div
+              className={`section-content__categories  lg:py-[40px]  min-[0px]:w-[100vw]  ${
+                showFilters ? 'h-screen' : ''
+              } z-[100] top-0 right-0 transition-all delay-75 duration-300 ease-linear min-[0px]:absolute lg:w-1/4 lg:static lg:bg-[transparent] lg:max-w-none ${
+                !showFilters ? 'max-w-[0px] overflow-hidden' : 'max-w-[100vw]'
+              } flex justify-center`}
+            >
+              <Categories
+                setShowFilter={setShowFilter}
+                showFilters={showFilters}
+              />
+            </div>
           </div>
-        </div>
-      </section>
-      <section className='pagination flex selection mb-5'>
-        {news?.results && !loading ? (
-          <Pagination
-            pageCount={handlePageCount(news)}
-            setState={setCategoryPageIndex}
-            activePageIndex={handleActiveCategoryPageIndex(activeCategory)}
-            slug={activeCategory}
-          />
-        ) : null}
-      </section>
-    </Container>
+        </section>
+
+        <section className='pagination flex selection mb-[100px] '>
+          {news?.results && !loading ? (
+            <Pagination
+              pageCount={handlePageCount(news)}
+              setState={setCategoryPageIndex}
+              activePageIndex={handleActiveCategoryPageIndex(activeCategory)}
+              slug={activeCategory}
+            />
+          ) : null}
+        </section>
+        <button
+          onClick={() => {
+            setShowFilter(true);
+          }}
+          className='lg:hidden filters-btn fixed w-[100vw] py-3 text-[#fff] bg-[#4044ee] top-[93vh] left-0'
+        >
+          Filter
+        </button>
+      </Container>
+    </>
   );
 }
 

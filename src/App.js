@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes maxLoadingTime={1000}>
         {languages.map((lang) => {
           return (
