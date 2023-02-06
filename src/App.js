@@ -11,7 +11,10 @@ import Place from './pages/InterestingPlaces/Place/Place';
 import { Home } from './pages';
 import { Navbar, UniversalRoute } from './components';
 import { v4 } from 'uuid';
+
 import Map from './pages/Map/Map';
+import Footer from './components/Footer/Footer';
+
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
 function App() {
@@ -109,6 +112,7 @@ function App() {
           );
         })}
       </Routes>
+      <Footer />
     </div>
   );
 }

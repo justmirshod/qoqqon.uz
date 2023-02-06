@@ -10,6 +10,7 @@
     "axios": "^1.3.0",
     "classnames": "^2.3.2",
     "ky": "^0.33.2",
+    "latin-to-cyrillic": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.0",
