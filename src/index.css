@@ -98,3 +98,7 @@ body {
   margin: 20px 0;
   border-radius: 7px;
 }
+
+.filters-btn {
+  -webkit-backface-visibility: hidden;
+}
