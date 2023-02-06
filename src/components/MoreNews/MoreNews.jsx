@@ -23,27 +23,29 @@ function MoreNews({ slug, id, handleDateTime }) {
     const newArray = news.results.filter((item) => +item.id !== +id);
     return newArray.map((item) => {
       return (
-        <Link key={item.id} to={replaceKrill(activeLang) + `/news/${item.id}`}>
-          <div className='single-more__news-item w-[350px] hover:shadow-lg transition-all delay-75 duration-75 ease-linear shadow-none cursor-pointer hover:text-[#6366f1] rounded-md border'>
+        <Link
+          key={item.id}
+          to={replaceKrill(activeLang) + `/news/${item.id}`}
+          className='single-more__news-item min-[0px]:w-full min-[500px]:w-[48%] lg:w-full min-[500px]:text-[14px] hover:shadow-lg transition-all delay-75 duration-75 ease-linear flex flex-col justify-between shadow-none cursor-pointer hover:text-[#6366f1] rounded-md border'
+        >
+          <div className='top-side'>
             <div
               style={{
                 backgroundImage: `url(https://abdusamad4803.pythonanywhere.com${item.image})`,
               }}
-              className='item-image  h-[200px] bg-cover rounded-md'
+              className='item-image  min-[0px]:min-h-[250px] min-[0px]:bg-cover  min-[500px]:min-h-[200px] min-[850px]:min-h-[250px] lg:min-h-[240px] xl:min-h-[200px] lg:bg-[length:100%] bg-no-repeat rounded-md'
             ></div>
-            <div className='more-news--content'>
-              <p className='px-2 mt-2'>{item.translations?.uz?.title}</p>
-              <div className='bottom-side p-2 mt-3'>
-                <div className='news-item__right-side--details flex text-[0.875rem] mb-1 text-[#9397ad]'>
-                  <p className='details-date mr-5 '>
-                    {handleDateTime(item.created_at)}
-                  </p>
-                  <p className='detail-views'>
-                    <i className='fa-solid fa-eye '></i>
-                    <span className='ml-1'>{item.views}</span>
-                  </p>
-                </div>
-              </div>
+            <p className='px-2 mt-2'>{item.translations?.uz?.title}</p>
+          </div>
+          <div className='bottom-side p-2 mt-3'>
+            <div className='news-item__right-side--details flex text-[0.875rem] mb-1 text-[#9397ad]'>
+              <p className='details-date mr-5 '>
+                {handleDateTime(item.created_at)}
+              </p>
+              <p className='detail-views'>
+                <i className='fa-solid fa-eye '></i>
+                <span className='ml-1'>{item.views}</span>
+              </p>
             </div>
           </div>
         </Link>
@@ -52,7 +54,7 @@ function MoreNews({ slug, id, handleDateTime }) {
   };
 
   return (
-    <div className='moreNews flex flex-col items-center gap-4'>
+    <div className='moreNews flex flex-row flex-wrap min-[0px]:gap-2 lg:gap-4'>
       {renderMoreNews(moreNews)}
     </div>
   );

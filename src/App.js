@@ -67,7 +67,7 @@ function App() {
               />
 
               <Route
-                path={handleRoutes(lang, '/general-info')}
+                path={handleRoutes(lang, '/general-information')}
                 element={
                   <UniversalRoute>
                     <GeneralInfo />

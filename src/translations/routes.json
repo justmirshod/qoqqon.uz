@@ -45,18 +45,6 @@
           "link": "uz/news"
         },
         {
-          "name": "OAV biz haqimizda",
-          "link": "uz/mass-media-about-us"
-        },
-        {
-          "name": "Statistika",
-          "link": "uz/statistics"
-        },
-        {
-          "name": "Infografika",
-          "link": "uz/infografic"
-        },
-        {
           "name": "Fotojamlanmalar",
           "link": "uz/photo-galery"
         },
@@ -145,18 +133,6 @@
         {
           "name": "Янгииликлар",
           "link": "/news"
-        },
-        {
-          "name": "ОAВ биз ҳақимизда",
-          "link": "mass-media-abou-us"
-        },
-        {
-          "name": "Статистика",
-          "link": "/statistics"
-        },
-        {
-          "name": "Инфографика",
-          "link": "/infografic"
         },
         {
           "name": "Фотожамланмалар",

@@ -76,20 +76,17 @@ function SingleNews() {
   if (!singleNews.id) return;
 
   return (
-    <Container>
+    <Container className='mb-10'>
       {loading ? (
         <Loader />
       ) : (
-        <div className='single-news flex gap-[90px]'>
-          <div className='single-news__left-side w-2/3'>
-            <p className='news-title text-[#33354d] mt-4 text-[25px] mb-[30px]'>
+        <div className='single-news flex min-[0px]:flex-col  lg:flex-row gap-[70px]'>
+          <div className='single-news__left-side min-[0px]:w-full lg:w-2/3 xl:w-3/4'>
+            <p className='news-title text-[#33354d] min-[0px]:text-[18px] mt-4 lg:text-[25px] mb-[30px]'>
               {singleNews?.translations?.uz?.title}
             </p>
 
-            <div
-              style={{ backgroundImage: `url(${singleNews?.image})` }}
-              className='image-box w-[full] h-[600px] bg-cover mb-5 rounded-md '
-            ></div>
+            <img className='rounded-md w-full' src={singleNews?.image} alt='' />
             <div className='bottom-side'>
               <div className='news-item__right-side--details flex text-[0.875rem] mb-5 text-[#9397ad]'>
                 <p className='details-date mr-5 '>
@@ -102,7 +99,7 @@ function SingleNews() {
               </div>
             </div>
             <div className='w-[100px] h-[5px] bg-gray-700 mb-5'></div>
-            <div className='div single-news__left-side--content w-[90%]'>
+            <div className='div single-news__left-side--content lg:w-[90%]'>
               <div
                 className='news-all__content'
                 dangerouslySetInnerHTML={{
@@ -111,7 +108,7 @@ function SingleNews() {
               ></div>
             </div>
           </div>
-          <div className='single-news__right-side mt-4 w-1/3 '>
+          <div className='single-news__right-side mt-4 min-[0px]:w-[full] lg:w-1/3 xl:w-1/4'>
             <h1 className='text-[18px] text-center mb-5'>
               Aloqador yangiliklar
             </h1>
