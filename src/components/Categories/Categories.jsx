@@ -47,11 +47,11 @@ function Categories({ setShowFilter, showFilters }) {
 
   return (
     <div
-      className={`categories min-[0px]:w-full sticky top-10 lg:h-fit transition-opcatiy duration-75 ease-linear ${
+      className={`categories min-[0px]:w-full max-h-[100vh] overflow-auto lg:h-fit transition-opcatiy duration-75 ease-linear ${
         showFilters ? 'min-[0px]:bg-[#000000a6]' : 'min-[0px]:bg-[#000000]'
       } lg:bg-[transparent]`}
     >
-      <div className='overflow-box min-[0px]:bg-[#fff] min-[0px]:h-screen lg:bg-[transparent] min-[0px]:p-5 lg:p-0 max-w-[332px] ml-auto lg:h-fit'>
+      <div className='overflow-box min-[0px]:bg-[#fff] max-h-full overflow-auto min-[0px]:h-screen lg:bg-[transparent] min-[0px]:p-5 lg:p-0 max-w-[332px] ml-auto lg:h-fit'>
         <div className='lg:hidden sidebar-header flex justify-between items-center mb-4'>
           <p>Filters</p>
           <i

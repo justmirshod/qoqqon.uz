@@ -43,7 +43,7 @@ function News() {
         search: query,
         popular: '',
         page: activePageIndex ? activePageIndex + 1 : 1,
-        page_size: 1,
+        page_size: 10,
       })
     );
     //eslint-disable-next-line
@@ -67,6 +67,16 @@ function News() {
   //   navigate(options, { replace: true });
   // };
 
+  if (showFilters) {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+    document.body.style.height = '100vh';
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.height = 'fit-content';
+    document.body.style.overflow = 'visible';
+  }
+
   const renderAllNews = () => {
     if (news?.total === 0) {
       return <h1 className='text-center'>Hech qanaqa yangilik topilmadi</h1>;
@@ -85,7 +95,7 @@ function News() {
     <>
       <Container
         className={`min-[0px]:static lg:relative px-4  ${
-          showFilters ? 'h-screen overflow-hidden' : ''
+          showFilters ? 'min:[0px]:h-screen overflow-hidden' : ''
         }`}
       >
         <h1 className='page-route text-[#797f8c] my-[20px] text-[18px]'>
@@ -103,7 +113,7 @@ function News() {
             <div
               className={`section-content__categories  lg:py-[40px]  min-[0px]:w-[100vw]  ${
                 showFilters ? 'h-screen' : ''
-              } z-[100] top-0 right-0 transition-all delay-75 duration-300 ease-linear min-[0px]:absolute lg:w-1/4 lg:static lg:bg-[transparent] lg:max-w-none ${
+              } z-[100] min-[0px]:top-0 min-[0px]:right-0 transition-all delay-75 lg:h-fit  lg:top-[120px]  duration-300 ease-linear min-[0px]:absolute lg:w-1/4 lg:sticky lg:z-0 lg:bg-[transparent] lg:max-w-none ${
                 !showFilters ? 'max-w-[0px] overflow-hidden' : 'max-w-[100vw]'
               } flex justify-center`}
             >
