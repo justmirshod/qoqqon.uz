@@ -23,7 +23,7 @@ const Deputies = () => {
 
   return (
     <div className={styles.deputies}>
-      <h3>Депутаты районного Кенгаша</h3>
+      <h3 className='text-xl'>Депутаты районного Кенгаша</h3>
       <div className={styles.deputies__wrapper}>
         {deputies?.results?.map((d) => (
           <Link to={`/kengash-deputies/${d?.id}`} key={d?.id}>

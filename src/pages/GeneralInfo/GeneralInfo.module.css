@@ -109,3 +109,29 @@
   *:not(img) {
   margin-top: 16px;
 }
+
+@media all and (max-width: 1000px) {
+  .general__info .general__info_wrapper {
+    flex-direction: column;
+  }
+
+  .general__info .general__info_wrapper img {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .general__info .general__info_bottom h1 {
+    font-size: 16px !important;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .general__info
+  .general__info_bottom
+  .general__info__bottom_places
+  .general__info__bottom__places_item
+  > div {
+    flex-direction: column;
+  }
+}

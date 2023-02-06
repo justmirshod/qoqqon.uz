@@ -17,7 +17,7 @@ const Deputy = () => {
 
   return (
     <div className={styles.deputy}>
-      <h3>Депутаты районного Кенгаша</h3>
+      <h3 className='text-xl'>Депутаты районного Кенгаша</h3>
       <div className={styles.deputy__wrapper}>
         <div className={styles.deputy__wrapper_left}>
           <div className={styles.deputy__wrapper__left_top}>

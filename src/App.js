@@ -16,7 +16,7 @@ const languages = ['uz', 'en', 'ru', 'ўз'];
 function App() {
   return (
     <div className='App'>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes maxLoadingTime={1000}>
         <Route path='/kengash-deputies' element={<Deputies />} loading={true} />
         <Route

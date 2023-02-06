@@ -36,3 +36,9 @@
 .place .place__card .place__card_bottom p {
   margin-top: 16px;
 }
+
+@media all and (max-width: 800px) {
+  .place .place__card .place__card_top {
+    flex-direction: column;
+  }
+}

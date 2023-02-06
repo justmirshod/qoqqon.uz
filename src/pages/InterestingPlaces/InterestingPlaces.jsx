@@ -21,7 +21,7 @@ const InterestingPlaces = () => {
   return (
     <div className={styles.interesting__places}>
       <h1 className='text-2xl'>Интересные места</h1>
-      {/* <SwitchSelector options={categories} /> */}
+      <SwitchSelector options={categories} />
       <div className={styles.interesting__places_wrapper}>
         {interestingPlaces?.map((p) => (
           <Link key={p?.id} to={`/interesting-places/${p?.id}`}>
@@ -31,7 +31,11 @@ const InterestingPlaces = () => {
               </div>
               <div>
                 <h1 className='text-xl'>{p?.translations?.ru?.title}</h1>
-                <p className='mt-4 text-fst'>{p?.translations?.ru?.address}</p>
+                <div>
+                  <p className='mt-4 text-fst'>
+                    {p?.translations?.ru?.address}
+                  </p>
+                </div>
               </div>
             </div>
           </Link>
