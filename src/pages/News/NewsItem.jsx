@@ -95,16 +95,18 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
   };
 
   return (
-    <div className={`news-item flex min-h-[240px] gap-4 mb-4 `}>
+    <div
+      className={`news-item flex min-[0px]:flex-col sm:flex-row min-h-[240px]  gap-4 mb-4 `}
+    >
       <div
         style={{ backgroundImage: `url(${image})` }}
-        className='news-item__left-side w-1/3 bg-cover bg-center-top rounded-md cursor-pointer'
+        className='news-item__left-side min-[0px]:w-full min-[0px]:min-h-[240px] sm:w-1/3 bg-cover bg-center rounded-md cursor-pointer'
         onClick={() => {
           navigate(replaceKrill(activeLang) + `/news/${id}`);
         }}
       ></div>
       <div
-        className={`news-item__right-side w-2/3 flex flex-col justify-between pb-2`}
+        className={`news-item__right-side min-[0px]:w-full sm:w-2/3 flex flex-col justify-between pb-2`}
       >
         <div className='top-side'>
           <div className='news-item__right-side--category'>
