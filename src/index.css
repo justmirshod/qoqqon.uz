@@ -100,5 +100,6 @@ body {
 }
 
 .filters-btn {
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
