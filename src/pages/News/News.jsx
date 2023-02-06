@@ -94,7 +94,7 @@ function News() {
   return (
     <>
       <Container
-        className={`min-[0px]:static lg:relative px-4  ${
+        className={`min-[0px]:static lg:relative   ${
           showFilters ? 'min:[0px]:h-screen overflow-hidden' : ''
         }`}
       >
