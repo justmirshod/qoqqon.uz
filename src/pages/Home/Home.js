@@ -8,6 +8,8 @@ import translations from './home.json';
 import { Link } from 'react-router-dom';
 import { replaceKrill } from '../../config/config';
 import LatestNews from './components/LatestNews/LatestNews';
+import Map from '../Map/Map';
+import Meetings from './components/Meetings/Meetings';
 
 const Home = () => {
   const { activeLang } = useSelector((state) => state.language);
@@ -40,12 +42,14 @@ const Home = () => {
           </div>
         </Container>
       </div>
-
-      <div>
-        <Container>
-          <LatestNews />
-        </Container>
-      </div>
+      <LatestNews />
+      <Container>
+        <div className='bg-gray-100'>
+          <h1 className='text-2xl mt-10'>Qo'qon shahar xaritasi</h1>
+          <Map />
+        </div>
+      </Container>
+      <Meetings />
     </div>
   );
 };
