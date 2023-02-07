@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 // components
 import Namebox from './components/Namebox';
@@ -7,6 +8,9 @@ import Mapnav from './components/Mapnav';
 
 // helpers
 import changeView from './helpers/changeView';
+
+//config
+import { replaceKrill } from '../../config/config';
 
 // react-redux
 import { useSelector } from 'react-redux';
@@ -17,7 +21,9 @@ import SideInfo from './components/SideInfo';
 import { Container } from '../../layouts';
 
 const Map = () => {
+  const location = useLocation();
   const { sector, modal, mahallaName } = useSelector((state) => state.map);
+  const { activeLang } = useSelector((state) => state.language);
 
   const dispatch = useDispatch();
 
