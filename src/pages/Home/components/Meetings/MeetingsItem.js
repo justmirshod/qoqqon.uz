@@ -15,15 +15,23 @@ export default function MeetingsItem({
   return (
     <>
       {index !== 0 ? (
-        <div className='flex h-[32%] border p-6 rounded-xl hover:border-blue-300 duration-150'>
+        <Link
+          to={`${replaceKrill(activeLang)}/news/${id}`}
+          className='flex h-[32%] border p-6 rounded-xl hover:border-blue-300 hover:cursor-pointer duration-150'
+        >
           <img src={image} className='w-1/3 h-full rounded-xl mr-6' alt='' />
-          <div className='w-2/3 flex flex-col h-full justify-between'>
+          <div className='w-2/3 flex flex-col h-full justify-between py-2'>
             <div>
               <h1 className='text-lg font-semibold leading-tight'>
                 {activeLang === 'ўз'
                   ? translit(translations.uz?.title)
                   : translations[activeLang]?.title}
               </h1>
+              <p className='font-semibold my-3 leading-relaxed text-gray-800'>
+                {activeLang === 'ўз'
+                  ? translit(translations?.uz?.description)
+                  : translations[activeLang]?.description}
+              </p>
             </div>
             <div className='flex items-center mt-2'>
               <span className='text-[#717171] inline-block text-sm mr-10'>
@@ -35,7 +43,7 @@ export default function MeetingsItem({
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       ) : null}
     </>
   );

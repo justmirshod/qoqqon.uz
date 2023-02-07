@@ -53,52 +53,54 @@ export default function Meetings() {
               'Yangiliklar topilmadi'
             ) : (
               <>
-                <div className='grid grid-cols-2 gap-6'>
-                  <div className='col-span-1 p-4 flex flex-col justify-between border hover:border-blue-300 duration-100 rounded-2xl'>
-                    <div className='rounded-xl'>
-                      <img
-                        src={news?.results[0]?.image}
-                        className='rounded-lg w-full'
-                        alt=''
-                      />
-                      <div className='flex items-center text-[#717171] text-sm mt-2'>
-                        <span>
-                          {handleDateTime(
-                            news?.results[0]?.created_at,
-                            activeLang
-                          )}
-                        </span>
-                        <div className='ml-10'>
-                          <i className='fa-regular fa-eye mr-1'></i>
-                          <span>{news?.results[0]?.views}</span>
-                        </div>
-                      </div>
-                      <h1 className='text-lg font-semibold leading-tight my-3'>
-                        {activeLang === 'ўз'
-                          ? translit(news?.results[0]?.translations.uz?.title)
-                          : news?.results[0]?.translations[activeLang]?.title}
-                      </h1>
-                      <p className=' text-gray-800 leading-tight my-3'>
-                        {activeLang === 'ўз'
-                          ? translit(
-                              news?.results[0]?.translations.uz?.description
-                            )
-                          : news?.results[0]?.translations[activeLang]
-                              ?.description}
-                      </p>
-                      <div className='mt-10 text-blue-600'>
-                        <Link
-                          to={`${replaceKrill(activeLang)}/news/${
-                            news?.results[0]?.id
-                          }`}
-                        >
-                          <span>Batafsil</span>
-                          <i class='fa-solid fa-arrow-right-long ml-2'></i>
-                        </Link>
-                      </div>
-                    </div>
+                <div className='grid grid-cols-7 gap-6'>
+                  <div className='col-span-3 border rounded-2xl hover:border-blue-300 p-6'>
+                    {news?.results?.map((item, index) => (
+                      <>
+                        {index === 0 ? (
+                          <div className='flex flex-col justify-between h-full'>
+                            <div>
+                              <img
+                                src={item.image}
+                                className='rounded-xl'
+                                alt=''
+                              />
+                              <div className='flex items-center mt-2'>
+                                <span className='text-[#717171] inline-block mr-10'>
+                                  {handleDateTime(item.created_at, activeLang)}
+                                </span>
+                                <div className='text-[#717171] text-sm'>
+                                  <i className='fa-regular fa-eye mr-1'></i>
+                                  <span className=''>{item.views}</span>
+                                </div>
+                              </div>
+                              <h1 className='text-xl font-semibold leading-tight my-3'>
+                                {activeLang === 'ўз'
+                                  ? translit(item.translations?.uz?.title)
+                                  : item.translations[activeLang]?.title}
+                              </h1>
+                              <p className='font-semibold my-3 leading-relaxed text-gray-800'>
+                                {activeLang === 'ўз'
+                                  ? translit(item.translations?.uz?.description)
+                                  : item.translations[activeLang]?.description}
+                              </p>
+                            </div>
+                            <div className='mt-4 text-blue-600'>
+                              <Link
+                                to={`${replaceKrill(activeLang)}/news/${
+                                  item.id
+                                }`}
+                              >
+                                <span>Batafsil</span>
+                                <i class='fa-solid fa-arrow-right-long ml-2'></i>
+                              </Link>
+                            </div>
+                          </div>
+                        ) : null}
+                      </>
+                    ))}
                   </div>
-                  <div className='col-span-1 flex flex-col justify-between'>
+                  <div className='col-span-4 flex flex-col justify-between'>
                     {news?.results?.map((item, index) => (
                       <MeetingsItem {...item} index={index} />
                     ))}
