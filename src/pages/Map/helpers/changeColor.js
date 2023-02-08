@@ -1,13 +1,13 @@
 const changeColor = (sector) => {
   switch (sector) {
     case 1:
-      return "fill-gray-600";
+      return 'fill-[#AB8185]';
     case 2:
-      return "fill-purple-900";
+      return 'fill-[#B06890]';
     case 3:
-      return "fill-orange-600";
+      return 'fill-[#919C64]';
     case 4:
-      return "fill-green-700";
+      return 'fill-[#D1CCB4]';
   }
 };
 
