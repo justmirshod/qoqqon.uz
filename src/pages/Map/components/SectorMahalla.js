@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { qoqonMap } from "../helpers/qoqonMap";
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { qoqonMap } from '../helpers/qoqonMap';
 import {
   setAnimation,
   setAnim,
   setMahallaId,
   setMahallaName,
   setModal,
-} from "../MapSlice";
-import changeColor from "../helpers/changeColor";
+} from '../MapSlice';
+import changeColor from '../helpers/changeColor';
 
 const SectorMahalla = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const SectorMahalla = () => {
   };
 
   const mouseOut = () => {
-    dispatch(setMahallaName(""));
+    dispatch(setMahallaName(''));
   };
 
   const getID = (id) => {
@@ -37,16 +37,18 @@ const SectorMahalla = () => {
     }, 15);
   }, [sector]);
 
+  console.log(mahallaId);
+
   return qoqonMap[sector - 1].mahalla.map((item, index) =>
     item.path({
       className: `${
-        mahallaId === ""
+        mahallaId === ''
           ? changeColor(sector)
           : item.id === mahallaId
-          ? "fill-black"
+          ? 'fill-gray-800'
           : changeColor(sector)
       } duration-500 hover:opacity-80 cursor-pointer active:opacity-70 focus:fill-black ${
-        anim ? "translate-y-0 opacity-100" : "translate-y-20 opacity-10"
+        anim ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-10'
       }`,
       onClick: getID,
       hovered: getName,

@@ -90,6 +90,13 @@ body {
   -webkit-mask-image: url(./assets/icons/browser.png);
 }
 
+.icon-cross {
+  width: 30px;
+  height: 30px;
+  mask-image: url(./assets/icons/cross.png);
+  -webkit-mask-image: url(./assets/icons/cross.png);
+}
+
 .news-all__content {
   color: #575a74;
 }

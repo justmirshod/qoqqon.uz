@@ -30,10 +30,11 @@ const InfoModal = () => {
   return (
     <div
       id='infoModal'
-      className={`absolute md:mt-32 mt-0 left-1/2 duration-200 shadow-2xl md:w-[700px] w-[90%] md:h-[380px] z-10 ${
+      className={`absolute md:mt-0 mt-28 left-1/2 duration-200 shadow-2xl md:w-[600px] w-[80%] md:h-[380px] z-10 ${
         animation ? 'top-1/2 opacity-100' : 'top-[55%] opacity-0'
       }  rounded-xl bg-gray-300/[0.7] -translate-x-1/2 -translate-y-1/2 backdrop-blur-md`}
     >
+      <span className='icon icon-cross bg-red-600 absolute top-2 right-2 cursor-pointer z-10'></span>
       <div
         id='modal'
         className='md:grid md:grid-cols-5 flex flex-col p-8 gap-5'
@@ -69,7 +70,7 @@ const InfoModal = () => {
           )}
         </div>
         <div id='modal' className='col-span-3'>
-          <h1 id='modal' className='md:text-3xl text-xl mb-5 font-semibold'>
+          <h1 id='modal' className='md:text-3xl text-lg mb-5 font-semibold'>
             {loading ? (
               <Skeleton
                 baseColor='#A8AEB6'
@@ -84,6 +85,7 @@ const InfoModal = () => {
           {infoData.map((item, index) =>
             loading ? (
               <Skeleton
+                key={index}
                 baseColor='#A8AEB6'
                 highlightColor='#DEE1E5'
                 className='h-9 my-1 opacity-70'
@@ -92,7 +94,7 @@ const InfoModal = () => {
             ) : (
               <div
                 id='modal'
-                className='flex justify-between md:text-2xl text-lg my-3 border-b-2 border-gray-400'
+                className='flex justify-between md:text-2xl text-md my-3 border-b-2 border-gray-400'
                 key={index}
               >
                 <h1 id='modal' className='text-gray-600'>
@@ -107,6 +109,7 @@ const InfoModal = () => {
           {extraInfo.map((item, index) =>
             loading ? (
               <Skeleton
+                key={index}
                 baseColor='#A8AEB6'
                 highlightColor='#DEE1E5'
                 className='h-9 my-1 opacity-70'
@@ -115,7 +118,7 @@ const InfoModal = () => {
             ) : (
               <div
                 id='modal'
-                className='flex md:text-xl text-lg my-3 mb-2 text-gray-700 items-center'
+                className='flex md:text-xl text-md my-3 mb-2 text-gray-700 items-center'
                 key={index}
               >
                 <span
