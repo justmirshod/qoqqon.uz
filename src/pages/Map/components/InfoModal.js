@@ -30,7 +30,7 @@ const InfoModal = () => {
   return (
     <div
       id='infoModal'
-      className={`absolute  left-1/2 duration-200 shadow-2xl md:w-[700px] w-[90%] md:h-[380px] ${
+      className={`absolute md:mt-32 mt-0 left-1/2 duration-200 shadow-2xl md:w-[700px] w-[90%] md:h-[380px] z-10 ${
         animation ? 'top-1/2 opacity-100' : 'top-[55%] opacity-0'
       }  rounded-xl bg-gray-300/[0.7] -translate-x-1/2 -translate-y-1/2 backdrop-blur-md`}
     >
@@ -69,7 +69,7 @@ const InfoModal = () => {
           )}
         </div>
         <div id='modal' className='col-span-3'>
-          <h1 id='modal' className='text-3xl mb-5 font-semibold'>
+          <h1 id='modal' className='md:text-3xl text-xl mb-5 font-semibold'>
             {loading ? (
               <Skeleton
                 baseColor='#A8AEB6'
@@ -92,7 +92,7 @@ const InfoModal = () => {
             ) : (
               <div
                 id='modal'
-                className='flex justify-between text-2xl my-3 border-b-2 border-gray-400'
+                className='flex justify-between md:text-2xl text-lg my-3 border-b-2 border-gray-400'
                 key={index}
               >
                 <h1 id='modal' className='text-gray-600'>
@@ -115,7 +115,7 @@ const InfoModal = () => {
             ) : (
               <div
                 id='modal'
-                className='flex text-xl my-3 mb-2 text-gray-700 items-center'
+                className='flex md:text-xl text-lg my-3 mb-2 text-gray-700 items-center'
                 key={index}
               >
                 <span
