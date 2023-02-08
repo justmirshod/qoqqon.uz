@@ -7,9 +7,9 @@ const changeView = (sector) => {
     case 2:
       return '380 170 420 420';
     case 3:
-      return '80 -20 420 420';
+      return '80 -20 460 450';
     case 4:
-      return '380 -30 320 320';
+      return '355 -20 370 370';
     default:
       return;
   }
