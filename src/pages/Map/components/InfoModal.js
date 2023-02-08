@@ -37,7 +37,7 @@ const InfoModal = () => {
   return (
     <div
       id='infoModal'
-      className={`absolute md:mt-0 mt-28 left-1/2 duration-200 shadow-2xl md:w-[600px] w-[80%] md:h-[380px] z-10 ${
+      className={`absolute md:mt-0 mt-28 left-1/2 duration-200 shadow-2xl md:w-[700px] w-[80%] md:h-[380px] z-10 ${
         animation ? 'top-1/2 opacity-100' : 'top-[55%] opacity-0'
       }  rounded-xl bg-gray-300/[0.7] -translate-x-1/2 -translate-y-1/2 backdrop-blur-md`}
     >
