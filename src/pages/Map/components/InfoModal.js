@@ -27,6 +27,13 @@ const InfoModal = () => {
 
   const { loading, data } = mahallaInfo;
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <div
       id='infoModal'
