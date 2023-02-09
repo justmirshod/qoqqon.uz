@@ -22,13 +22,13 @@ const Home = () => {
 
       <div className=''>
         <Container>
-          <div className='grid grid-cols-2 gap-10 py-20'>
+          <div className='grid md:grid-cols-2 grid-cols-1 gap-10 py-20'>
             <Link
               to={`${replaceKrill(activeLang)}/news`}
               className='bg-[#fff] rounded-xl px-10 py-12 shadow-lg hover:shadow-2xl transition-transform hover:scale-[1.01]  flex itmes-center'
             >
               <img src={news_icon} className='w-[60px] h-[60px] mr-4' alt='' />
-              <div className='mt-[16px] text-xl'>
+              <div className='md:mt-[16px] text-xl'>
                 {translations.allNews[activeLang]}
               </div>
             </Link>

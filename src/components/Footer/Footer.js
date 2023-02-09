@@ -12,9 +12,9 @@ export default function Footer() {
   return (
     <div className='bg-[#fff] py-10'>
       <Container>
-        <div className='flex'>
-          <div className='w-1/2 flex flex-col justify-between'>
-            <div>
+        <div className='grid lg:grid-cols-2 md:grid-cols-5'>
+          <div className='lg:col-span-1 md:col-span-2 md:flex md:flex-col md:justify-between'>
+            <div className='flex md:block items-center justify-between mb-6'>
               <Link
                 to={`${replaceKrill(activeLang)}`}
                 className='flex items-center'
@@ -24,21 +24,21 @@ export default function Footer() {
                   className='w-[70px] h-[70px] mr-3'
                   alt=''
                 />
-                <p className='text-lg max-w-[150px] font-bold'>
+                <p className='hidden md:block text-lg max-w-[150px] font-bold'>
                   {translations.ministryName[activeLang]}
                 </p>
               </Link>
-              <div className='mt-10 flex items-center'>
-                <div className='w-[60px] h-[60px] bg-blue-300 rounded-full mr-4'></div>
-                <div className='w-[60px] h-[60px] bg-blue-300 rounded-full mr-4'></div>
-                <div className='w-[60px] h-[60px] bg-blue-300 rounded-full mr-4'></div>
+              <div className='md:mt-10 flex items-center'>
+                <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-300 rounded-full mr-4'></div>
+                <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-300 rounded-full mr-4'></div>
+                <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-300 rounded-full mr-4'></div>
               </div>
             </div>
             <div className='text-sm text-[#7F7F7F]'>
               {translations.endingSentence[activeLang]}
             </div>
           </div>
-          <div className='w-1/2 flex flex-col justify-between'>
+          <div className='lg:col-span-1 md:col-span-3 md:flex hidden md:flex-col md:justify-between'>
             <div className='flex mb-14'>
               {routes[activeLang]
                 .filter((_, id) => id === 0 || id === 1)

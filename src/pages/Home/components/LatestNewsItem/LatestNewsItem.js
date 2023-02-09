@@ -14,7 +14,7 @@ export default function LatestNewsItem({
 }) {
   const { activeLang } = useSelector((state) => state.language);
   return (
-    <div className='p-6 rounded-2xl bg-[#faf8f8] shadow-lg col-span-1 flex flex-col justify-between'>
+    <div className='lg:p-6 p-4 rounded-2xl bg-[#faf8f8] shadow-lg col-span-1 flex flex-col justify-between'>
       <div>
         <img src={image} alt='' className='w-full h-[240px] rounded-xl' />
         <div className='flex items-center mt-2'>

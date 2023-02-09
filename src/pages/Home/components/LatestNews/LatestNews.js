@@ -27,7 +27,7 @@ export default function LatestNews() {
             ) : (
               <>
                 <h1 className='text-2xl mt-4 mb-6'>So'nggi xabarlar</h1>
-                <div className='grid grid-cols-3 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                   {latestNews.results?.map((item) => (
                     <LatestNewsItem key={item.id} {...item} />
                   ))}
