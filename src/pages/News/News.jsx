@@ -41,9 +41,7 @@ function News() {
       getAllNews({
         category: activeCategory === 'all' ? '' : activeCategory,
         search: query,
-        popular: '',
         page: activePageIndex ? activePageIndex + 1 : 1,
-        page_size: 10,
       })
     );
     //eslint-disable-next-line
@@ -92,9 +90,9 @@ function News() {
   };
 
   return (
-    <>
+    <div>
       <Container
-        className={`min-[0px]:static lg:relative   ${
+        className={`min-[0px]:static lg:relative  ${
           showFilters ? 'min:[0px]:h-screen overflow-hidden' : ''
         }`}
       >
@@ -144,7 +142,7 @@ function News() {
           Filter
         </button>
       </Container>
-    </>
+    </div>
   );
 }
 
