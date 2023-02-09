@@ -29,9 +29,9 @@ export default function Meetings() {
   return (
     <div className='bg-[#fff] py-10 mb-4'>
       <Container>
-        <div className='flex items-center justify-between'>
-          <h1 className='text-2xl mb-8'>Uchrashuv va tadbirlar</h1>
-          <div>
+        <div className='flex items-center justify-between mb-8'>
+          <h1 className='text-2xl'>Uchrashuv va tadbirlar</h1>
+          <div className='hidden md:block'>
             <span
               className='cursor-pointer'
               onClick={() => {
@@ -53,8 +53,8 @@ export default function Meetings() {
               'Yangiliklar topilmadi'
             ) : (
               <>
-                <div className='grid grid-cols-7 gap-6'>
-                  <div className='col-span-3 border rounded-2xl hover:border-blue-300 p-6'>
+                <div className='grid lg:grid-cols-7  grid-cols-1 gap-6'>
+                  <div className='lg:col-span-3 border rounded-2xl hover:border-blue-300 lg:p-6 p-3'>
                     {news?.results?.map((item, index) => (
                       <>
                         {index === 0 ? (
@@ -100,7 +100,7 @@ export default function Meetings() {
                       </>
                     ))}
                   </div>
-                  <div className='col-span-4 flex flex-col justify-between'>
+                  <div className='lg:col-span-4 flex flex-col justify-between'>
                     {news?.results?.map((item, index) => (
                       <MeetingsItem {...item} index={index} />
                     ))}
