@@ -17,13 +17,14 @@ export default function MeetingsItem({
       {index !== 0 ? (
         <Link
           to={`${replaceKrill(activeLang)}/news/${id}`}
-          className='grid md:gap-5 md:grid-cols-3 grid-cols-1 h-[32%] border lg:p-6 p-3 rounded-xl hover:border-blue-300 hover:cursor-pointer duration-150'
+          className='grid md:gap-5 md:grid-cols-3 grid-cols-1 overflow-hidden h-[32%] border  lg:p-5 p-3 rounded-xl hover:border-blue-300 hover:cursor-pointer duration-150'
         >
           <img
             src={image}
-            className='col-span-1 h-full overflow-hidden w-full rounded-xl mr-6'
+            className='col-span-1 h-full overflow-hidden w-full rounded-xl'
             alt=''
           />
+
           <div className='col-span-2 flex flex-col h-full justify-between py-2'>
             <div>
               <h1 className='text-lg font-semibold leading-tight'>
