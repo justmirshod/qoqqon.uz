@@ -10,6 +10,7 @@ import { replaceKrill } from '../../config/config';
 import LatestNews from './components/LatestNews/LatestNews';
 import Map from '../Map/Map';
 import Meetings from './components/Meetings/Meetings';
+import Faq from './components/Faq/Faq';
 
 const Home = () => {
   const { activeLang } = useSelector((state) => state.language);
@@ -50,6 +51,7 @@ const Home = () => {
         </div>
       </Container>
       <Meetings />
+      <Faq />
     </div>
   );
 };
