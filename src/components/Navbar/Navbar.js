@@ -149,12 +149,14 @@ const Navbar = () => {
                     </Link>
                   </button>
                   <button
-                    className='w-[40px] h-10 border xl:hidden'
+                    className='w-10 h-10 xl:hidden'
                     onClick={() => {
                       setShowModal(true);
                       document.body.style.overflow = 'hidden';
                     }}
-                  ></button>
+                  >
+                    <i class='fa-solid fa-bars text-2xl font-semibold'></i>
+                  </button>
                 </div>
               </ul>
             </div>
