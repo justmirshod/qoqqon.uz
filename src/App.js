@@ -14,16 +14,26 @@ import { v4 } from 'uuid';
 
 import Map from './pages/Map/Map';
 import Footer from './components/Footer/Footer';
+import { setShowLangs } from './components/Navbar/navbar_slice';
+import { useDispatch } from 'react-redux';
 
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
 function App() {
+  const dispatch = useDispatch();
   const handleRoutes = (lang, path) => {
     return lang === 'ўз' ? path : `/${lang}${path}`;
   };
 
   return (
-    <div className='App'>
+    <div
+      className='App'
+      onClick={(e) => {
+        if (!e.target.classList.contains('lang-btn')) {
+          dispatch(setShowLangs(false));
+        }
+      }}
+    >
       <Navbar />
       <Routes maxLoadingTime={1000}>
         {languages.map((lang) => {

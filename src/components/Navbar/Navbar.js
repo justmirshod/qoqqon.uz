@@ -11,39 +11,9 @@ import MiniNavbarItem from '../MiniNavbar/MiniNavbarItem';
 import MiniNavbar from '../MiniNavbar/MiniNavbar';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { replaceKrill } from '../../config/config';
+import { replaceKrill, adaptBtn } from '../../config/config';
 
 const langs = ['ўз', 'uz', 'en', 'ru'];
-
-const a = (item, path) => {
-  let b = path;
-  let arr = b.split('/');
-  if (arr[1] === 'uz' || arr[1] === 'ru' || arr[1] === 'en') {
-    if (item === 'ўз') {
-      arr[1] = '';
-      arr.shift();
-    } else {
-      arr[1] = item;
-    }
-    b = arr.join('/');
-    return b;
-  } else {
-    arr.unshift(item);
-    if (arr[2] === '') {
-      arr.pop();
-    }
-    arr[1] = arr[0];
-    arr[0] = '';
-    if (item === 'ўз') {
-      arr[1] = '';
-      arr.shift();
-    } else {
-      arr[1] = item;
-    }
-    b = arr.join('/');
-    return b;
-  }
-};
 
 const Navbar = () => {
   const { isLangLoading, activeLang, activeTheme, showLangs } = useSelector(
@@ -124,17 +94,27 @@ const Navbar = () => {
                       } duration-200 w-[20px] h-[20px] rounded-full translate-y-[0.4px] bg-[#fff]`}
                     ></div>
                   </div>
-                  <div className='mr-3 relative'>
-                    <button className='rounded py-2 px-3 bg-gray-100'>
+                  <div
+                    className='mr-3 relative'
+                    onClick={(e) => {
+                      dispatch(setShowLangs(!showLangs));
+                    }}
+                  >
+                    <button className='lang-btn rounded text-sm py-2 px-3 bg-gray-100'>
                       {activeLang.toUpperCase()}
                     </button>
-                    <ul className='absolute pt-2 bg-[#fff]'>
+                    <ul
+                      className={`absolute pt-2 bg-[#fff] overflow-hidden ${
+                        showLangs ? 'h-[177px]' : 'h-0'
+                      }`}
+                    >
                       {langs.map((item) => (
                         <li
-                          className='border text-center py-2 px-3 hover:bg-gray-50 cursor-pointer'
+                          className='text-center py-2 px-4 border hover:bg-gray-50 cursor-pointer'
                           onClick={() => {
                             dispatch(setLang(item));
-                            navigate(a(item, location.pathname));
+                            navigate(adaptBtn(item, location.pathname));
+                            dispatch(setShowLangs(false));
                           }}
                         >
                           {item}
