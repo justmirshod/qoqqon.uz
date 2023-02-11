@@ -7,6 +7,7 @@ import { setActiveCategory } from '../../../../store/api/categoriesSlice.api';
 import { replaceKrill, handleDateTime } from '../../../../config/config';
 import MeetingsItem from './MeetingsItem';
 import translit from 'latin-to-cyrillic';
+import { v4 } from 'uuid';
 
 export default function Meetings() {
   const dispatch = useDispatch();
@@ -102,7 +103,7 @@ export default function Meetings() {
                   </div>
                   <div className='lg:col-span-4 flex flex-col justify-between'>
                     {news?.results?.map((item, index) => (
-                      <MeetingsItem {...item} index={index} />
+                      <MeetingsItem key={v4()} {...item} index={index} />
                     ))}
                   </div>
                 </div>
