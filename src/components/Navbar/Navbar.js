@@ -5,12 +5,15 @@ import dark_mode_icon from '../../assets/icons/night-mode.png';
 import light_mode_icon from '../../assets/icons/sun.png';
 import { useSelector, useDispatch } from 'react-redux';
 import NavbarRoutes from './NavbarRoutes';
-import { setTheme, setShowLangs } from './navbar_slice';
+import { setTheme, setShowLangs, setLang } from './navbar_slice';
 import routes from '../../translations/routes.json';
 import MiniNavbarItem from '../MiniNavbar/MiniNavbarItem';
 import MiniNavbar from '../MiniNavbar/MiniNavbar';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { replaceKrill, adaptBtn } from '../../config/config';
+
+const langs = ['ўз', 'uz', 'en', 'ru'];
 
 const Navbar = () => {
   const { isLangLoading, activeLang, activeTheme, showLangs } = useSelector(
@@ -19,6 +22,9 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const lagnPath = location.pathname.split('/')[1];
 
   useEffect(() => {
     document.body.style.overflow = 'initial';
@@ -88,52 +94,35 @@ const Navbar = () => {
                       } duration-200 w-[20px] h-[20px] rounded-full translate-y-[0.4px] bg-[#fff]`}
                     ></div>
                   </div>
-                  <div className='mr-3'>
-                    <div
-                      className='inline-flex bg-white border rounded-md'
-                      onMouseOver={(e) => {
-                        if (e.target.tagName === 'BUTTON') {
-                          dispatch(setShowLangs(true));
-                        }
-                      }}
-                      onMouseOut={(e) => {
-                        if (e.target) dispatch(setShowLangs(false));
-                      }}
+                  <div
+                    className='mr-3 relative'
+                    onClick={(e) => {
+                      dispatch(setShowLangs(!showLangs));
+                    }}
+                  >
+                    <button className='lang-btn rounded text-sm py-2 px-3 bg-gray-100'>
+                      {activeLang.toUpperCase()}
+                    </button>
+                    <ul
+                      className={`absolute pt-2 bg-[#fff] overflow-hidden ${
+                        showLangs ? 'h-[177px]' : 'h-0'
+                      }`}
                     >
-                      <button className='px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md'>
-                        {activeLang.toUpperCase()}
-                      </button>
-
-                      <div
-                        className={`relative ${
-                          showLangs ? 'h-full' : 'h-0 overflow-hidden'
-                        } `}
-                      >
-                        <div className='absolute right-0 z-10 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg top-6'>
-                          <div className='p-2'>
-                            <Link
-                              to='EN'
-                              className='block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700'
-                            >
-                              EN
-                            </Link>
-                            <Link
-                              to='RU'
-                              className='block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700'
-                            >
-                              RU
-                            </Link>
-                            <Link
-                              to='/uz'
-                              className='block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700'
-                            >
-                              UZ
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      {langs.map((item) => (
+                        <li
+                          className='text-center py-2 px-4 border hover:bg-gray-50 cursor-pointer'
+                          onClick={() => {
+                            dispatch(setLang(item));
+                            navigate(adaptBtn(item, location.pathname));
+                            dispatch(setShowLangs(false));
+                          }}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+
                   <button className='bg-blue-600 hover:bg-blue-700 hidden xl:block rounded-lg py-2 px-3'>
                     <Link
                       to={`/${activeLang}/contacts`}
