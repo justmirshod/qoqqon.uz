@@ -1,2 +1,3 @@
 import Home from './Home/Home';
-export { Home };
+import Procedure from './Procedure/Procedure';
+export { Home, Procedure };
