@@ -1,2 +1,3 @@
 import Container from './Container/Container';
-export { Container };
+import MiniContainer from './Container/MiniContainer';
+export { Container, MiniContainer };

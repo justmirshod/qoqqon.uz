@@ -178,5 +178,95 @@
         }
       ]
     }
+  ],
+  "en": [
+    {
+      "name": "About khokimiyat",
+      "links": [
+        {
+          "name": "Goals and objectives",
+          "link": "/en/goals-and-objectives"
+        },
+        {
+          "name": "Management",
+          "link": "/en/management"
+        },
+        {
+          "name": "Appartas",
+          "link": "/en/apparats"
+        },
+        {
+          "name": "Structure",
+          "link": "/en/structure"
+        },
+        {
+          "name": "The procedure of receiving citizens",
+          "link": "/en/procedure"
+        },
+        {
+          "name": "Subdivisions",
+          "link": "/en/subdivisions"
+        },
+        {
+          "name": "Manager asistants",
+          "link": "/en/manager-asistantas"
+        },
+        {
+          "name": "Vacancies",
+          "link": "/en/vacancies"
+        }
+      ]
+    },
+    {
+      "name": "Press center",
+      "links": [
+        {
+          "name": "News",
+          "link": "/en/news"
+        },
+        {
+          "name": "Photo galery",
+          "link": "/en/photo-galery"
+        },
+        {
+          "name": "Video galery",
+          "link": "/en/video-galery"
+        }
+      ]
+    },
+    {
+      "name": "Kengash deputies",
+      "links": [
+        {
+          "name": "Kengash deputies",
+          "link": "/en/kengash-deputies"
+        },
+        {
+          "name": "Accepted documents",
+          "link": "/en/accepted/documents"
+        }
+      ]
+    },
+    {
+      "name": "Region",
+      "links": [
+        {
+          "name": "General information",
+          "link": "/en/general-information"
+        },
+        {
+          "name": "Region ratiing",
+          "link": "/en/indicator"
+        },
+        {
+          "name": "Interesting places",
+          "link": "/en/interesting-places"
+        },
+        {
+          "name": "Region map",
+          "link": "/en/map"
+        }
+      ]
+    }
   ]
 }
