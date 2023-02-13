@@ -15,13 +15,13 @@ export default function MiniNavbar({ show, setShow }) {
         } duration-500 bg-[#fff] z-50 top-0 absolute right-0 overflow-y-scroll md:overflow-y-hidden`}
       >
         <div className='relative'>
-          <ul className='grid grid-cols-1 md:grid-cols-2 w-full bg-[#fff] lg:px-10 py-8'>
+          <ul className='grid grid-cols-1 md:grid-cols-2 w-full bg-[#fff] lg:px-10 py-14'>
             {routes[activeLang].map((item) => (
               <MiniNavbarItem {...item} />
             ))}
           </ul>
           <div
-            className='absolute top-4 right-5  cursor-pointer'
+            className='absolute top-7 right-7 cursor-pointer'
             onClick={() => {
               setShow(false);
               setTimeout(() => {

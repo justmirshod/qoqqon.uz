@@ -4,16 +4,16 @@
       "name": "Hokimiyat haqida",
       "links": [
         {
-          "name": "Maqsad va vazifalari",
-          "link": "uz/goals-and-objectives"
-        },
-        {
           "name": "Rahbariyat",
           "link": "uz/management"
         },
         {
           "name": "Apparat",
           "link": "uz/apparats"
+        },
+        {
+          "name": "Hokim vakolatlari",
+          "link": "uz/powers-of-governor"
         },
         {
           "name": "Tarkibiy tuzilma",
@@ -94,16 +94,16 @@
       "name": "Ҳокимият ҳақида",
       "links": [
         {
-          "name": "Мақсад ва вазифалари",
-          "link": "/goals-and-objectives"
-        },
-        {
           "name": "Раҳбарият",
           "link": "/management"
         },
         {
           "name": "Aппарат",
           "link": "/apparats"
+        },
+        {
+          "name": "Ҳоким ваколатлари",
+          "link": "/powers-of-governor"
         },
         {
           "name": "Таркибий тузилма",
@@ -184,16 +184,16 @@
       "name": "About khokimiyat",
       "links": [
         {
-          "name": "Goals and objectives",
-          "link": "/en/goals-and-objectives"
-        },
-        {
           "name": "Management",
           "link": "/en/management"
         },
         {
           "name": "Appartas",
           "link": "/en/apparats"
+        },
+        {
+          "name": "Powers of governor",
+          "link": "/en/powers-of-governor"
         },
         {
           "name": "Structure",

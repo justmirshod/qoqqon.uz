@@ -1,3 +1,3 @@
 export default function MiniContainer({ children }) {
-  return <div className='w-[930px] mx-auto'>{children}</div>;
+  return <div className='lg:w-[930px] lg:p-0 mx-auto px-5'>{children}</div>;
 }

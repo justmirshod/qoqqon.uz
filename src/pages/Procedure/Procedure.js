@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Container, MiniContainer } from '../../layouts';
 import { useSelector } from 'react-redux';
 import { replaceKrill } from '../../config/config';
+import Contact from '../../components/Contact/Contact';
 
 const data = [
   {
@@ -43,6 +44,7 @@ export default function Procedure() {
           ))}
         </MiniContainer>
       </div>
+      <Contact />
     </div>
   );
 }

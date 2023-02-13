@@ -10,6 +10,7 @@ import moreNewsSlice from './api/moreNewsSlice.api';
 import placesSlice from './api/placesSlice';
 import categoriesSlice from './api/categoriesSlice';
 import langSlice from '../components/Navbar/navbar_slice';
+import power from '../pages/GovernorPowers/power_slice';
 
 import map from '../pages/Map/MapSlice';
 
@@ -25,6 +26,7 @@ const store = configureStore({
     singleNews: singleNewsSlice,
     moreNews: moreNewsSlice,
     map,
+    power,
   },
 });
 

@@ -1,3 +1,4 @@
 import Home from './Home/Home';
 import Procedure from './Procedure/Procedure';
-export { Home, Procedure };
+import GovernorPowers from './GovernorPowers/GovernorPowers';
+export { Home, Procedure, GovernorPowers };
