@@ -10,7 +10,7 @@ export default function Footer() {
   const { activeLang } = useSelector((state) => state.language);
 
   return (
-    <div className='bg-[#fff] py-10'>
+    <div className='bg-[#474747] py-10'>
       <Container>
         <div className='grid lg:grid-cols-2 md:grid-cols-5'>
           <div className='lg:col-span-1 md:col-span-2 md:flex md:flex-col md:justify-between'>
@@ -24,7 +24,7 @@ export default function Footer() {
                   className='w-[70px] h-[70px] md:mr-3 mr-1'
                   alt=''
                 />
-                <p className='md:block text-lg max-w-[150px] font-bold'>
+                <p className='md:block text-lg max-w-[150px] text-gray-50 font-bold'>
                   {translations.ministryName[activeLang]}
                 </p>
               </Link>
@@ -50,12 +50,15 @@ export default function Footer() {
                 .filter((_, id) => id === 0 || id === 1)
                 .map((item) => (
                   <div className='w-1/2' key={v4()}>
-                    <h1 className='text-xl font-bold cursor-default mb-4'>
+                    <h1 className='text-xl font-bold cursor-default mb-4 text-gray-50'>
                       {item.name}
                     </h1>
                     <ul className='flex flex-col'>
                       {item.links.map((route) => (
-                        <li key={v4()} className='my-2 hover:text-blue-600'>
+                        <li
+                          key={v4()}
+                          className='my-2 hover:text-blue-600 text-gray-50'
+                        >
                           <Link to={route.link}>{route.name}</Link>
                         </li>
                       ))}

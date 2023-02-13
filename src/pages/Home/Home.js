@@ -11,6 +11,7 @@ import LatestNews from './components/LatestNews/LatestNews';
 import Map from '../Map/Map';
 import Meetings from './components/Meetings/Meetings';
 import Faq from './components/Faq/Faq';
+import Contact from '../../components/Contact/Contact';
 
 const Home = () => {
   const { activeLang } = useSelector((state) => state.language);
@@ -52,6 +53,7 @@ const Home = () => {
       </Container>
       <Meetings />
       <Faq />
+      <Contact />
     </div>
   );
 };
