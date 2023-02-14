@@ -11,6 +11,7 @@ import placesSlice from './api/placesSlice';
 import categoriesSlice from './api/categoriesSlice';
 import langSlice from '../components/Navbar/navbar_slice';
 import power from '../pages/GovernorPowers/power_slice';
+import manager from '../pages/ManagerAsistant/managers_slice';
 
 import map from '../pages/Map/MapSlice';
 
@@ -27,6 +28,7 @@ const store = configureStore({
     moreNews: moreNewsSlice,
     map,
     power,
+    manager,
   },
 });
 
