@@ -12,22 +12,23 @@ const defaultState = {
 };
 export default function FullMap() {
   return (
-    <YMaps>
-      <Map
-        defaultState={defaultState}
-        modules={['control.ZoomControl', 'control.FullscreenControl']}
-        width='100%'
-        height='600px'
-      >
-        <Placemark
-          geometry={[41.3560069, 69.2044714]}
-          options={{
-            iconImageHref: '../../assets/icons/512x512bb.jpg',
-          }}
-        />
-        <Polyline />
-        <GeolocationControl options={{ float: 'left' }} />
-      </Map>
-    </YMaps>
+    <div className='md:h-[600px] h-[300px]'>
+      <YMaps>
+        <Map
+          defaultState={defaultState}
+          modules={['control.ZoomControl', 'control.FullscreenControl']}
+          style={{ height: '100%' }}
+        >
+          <Placemark
+            geometry={[41.3560069, 69.2044714]}
+            options={{
+              iconImageHref: '../../assets/icons/512x512bb.jpg',
+            }}
+          />
+          <Polyline />
+          <GeolocationControl options={{ float: 'left' }} />
+        </Map>
+      </YMaps>
+    </div>
   );
 }
