@@ -8,7 +8,7 @@ import SingleNews from './pages/SingleNews/SingleNews';
 import GeneralInfo from './pages/GeneralInfo/GeneralInfo';
 import InterestingPlaces from './pages/InterestingPlaces/InterestingPlaces';
 import Place from './pages/InterestingPlaces/Place/Place';
-import { GovernorPowers, Home, Procedure } from './pages';
+import { GovernorPowers, Home, ManagerAsistant, Procedure } from './pages';
 import { Navbar, UniversalRoute } from './components';
 import { v4 } from 'uuid';
 
@@ -131,6 +131,14 @@ function App() {
                 element={
                   <UniversalRoute>
                     <GovernorPowers />
+                  </UniversalRoute>
+                }
+              />
+              <Route
+                path={handleRoutes(lang, '/manager-asistants')}
+                element={
+                  <UniversalRoute>
+                    <ManagerAsistant />
                   </UniversalRoute>
                 }
               />
