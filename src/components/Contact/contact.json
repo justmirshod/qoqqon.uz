@@ -1,0 +1,20 @@
+{
+  "connection": {
+    "uz": "Bog'lanish",
+    "en": "Connection",
+    "ru": "Связь",
+    "ўз": "Боғланиш"
+  },
+  "place": {
+    "uz": "Farg'ona viloyati Qo'qon shahri 12-uy",
+    "en": "Fergana district Kokan city 12th home",
+    "ru": "Ферганская область, г.Кокан, дом 12",
+    "ўз": "Фарғона вилояти Қўқон шаҳри 12-уй"
+  },
+  "date": {
+    "uz": "Dushanab-Juma",
+    "en": "Monday-Friday",
+    "ru": "Понедельник-Пятница",
+    "ўз": "Душанба-Жума"
+  }
+}

@@ -76,7 +76,7 @@
         },
         {
           "name": "Tuman reytingi",
-          "link": "/uz/indicator"
+          "link": "uz/indicator"
         },
         {
           "name": "Qiziqarli joylar",
@@ -85,6 +85,96 @@
         {
           "name": "Tuman xaritasi",
           "link": "uz/map"
+        }
+      ]
+    }
+  ],
+  "ru": [
+    {
+      "name": "О хокимияте",
+      "links": [
+        {
+          "name": "Лидерство",
+          "link": "ru/management"
+        },
+        {
+          "name": "Аппарат",
+          "link": "ru/apparats"
+        },
+        {
+          "name": "Полномочия мэра",
+          "link": "ru/powers-of-governor"
+        },
+        {
+          "name": "Структура",
+          "link": "ru/structure"
+        },
+        {
+          "name": "Порядок приема граждан",
+          "link": "ru/procedure"
+        },
+        {
+          "name": "Районные организации",
+          "link": "ru/subdivisions"
+        },
+        {
+          "name": "Помощники мэра",
+          "link": "ru/manager-asistants"
+        },
+        {
+          "name": "Вакансии",
+          "link": "ru/vacancies"
+        }
+      ]
+    },
+    {
+      "name": "Информационная служба",
+      "links": [
+        {
+          "name": "Новости",
+          "link": "ru/news"
+        },
+        {
+          "name": "Фотоколлекции",
+          "link": "ru/photo-galery"
+        },
+        {
+          "name": "Видео сборники",
+          "link": "ru/video-galery"
+        }
+      ]
+    },
+    {
+      "name": "Совет депутатов",
+      "links": [
+        {
+          "name": "Районные депутаты",
+          "link": "ru/kengash-deputies"
+        },
+        {
+          "name": "Принятые документы",
+          "link": "ru/accepted-documents"
+        }
+      ]
+    },
+    {
+      "name": "Oкруг",
+      "links": [
+        {
+          "name": "Общая информация",
+          "link": "ru/general-information"
+        },
+        {
+          "name": "Рейтинг района",
+          "link": "ru/indicator"
+        },
+        {
+          "name": "Интересные места",
+          "link": "ru/interesting-places"
+        },
+        {
+          "name": "Карта района",
+          "link": "ru/map"
         }
       ]
     }

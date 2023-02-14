@@ -25,14 +25,14 @@ export default function GovernorPowers() {
           <i class='fa-solid fa-angle-right text-sm mt-1 mx-2'></i>
           <p>Hokim vakolatlari</p>
         </div>
+        <h1 className='text-3xl my-4'>Hokim vakolatlari</h1>
         {loading ? (
           'Loading'
         ) : (
-          <div className='text-lg leading-relaxed mb-10'>
+          <div className='text-lg mb-10 text-gray-600 leading-loose'>
             {activeLang === 'ўз'
               ? data?.translations?.uz?.text.replace(/<[^>]*>/g, '')
               : data?.translations[activeLang]?.text.replace(/<[^>]*>/g, '')}
-            {/* {data?.translations?.uz?.text} */}
           </div>
         )}
       </MiniContainer>

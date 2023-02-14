@@ -1,5 +1,7 @@
 import FaqItem from './FaqItem';
 import { Container } from '../../../../layouts';
+import translation from './faq.json';
+import { useSelector } from 'react-redux';
 const questions = [
   {
     id: 1,
@@ -37,11 +39,13 @@ const questions = [
   },
 ];
 export default function Faq() {
+  const { activeLang } = useSelector((state) => state.language);
+
   return (
     <Container>
       <div id='#questionare' className='mt-[60px] mb-[80px]'>
         <h1 className='text-2xl text-purple font-extrabold mb-[40px]'>
-          Ko'p so'raladigan savollar
+          {translation.faq[activeLang]}
         </h1>
         {questions.map((question, ind) => (
           <FaqItem key={ind} question={question} />

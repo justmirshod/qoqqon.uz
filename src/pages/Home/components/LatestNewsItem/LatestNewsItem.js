@@ -4,6 +4,7 @@ import { adaptToLanguage } from '../../../../config/config';
 import { handleDateTime } from '../../../../config/config';
 import { Link } from 'react-router-dom';
 import { replaceKrill } from '../../../../config/config';
+import translation from '../../home.json';
 
 export default function LatestNewsItem({
   translations,
@@ -34,7 +35,7 @@ export default function LatestNewsItem({
       </div>
       <div className='mt-4 text-blue-600'>
         <Link to={`${replaceKrill(activeLang)}/news/${id}`}>
-          <span>Batafsil</span>
+          <span>{translation.detail[activeLang]}</span>
           <i class='fa-solid fa-arrow-right-long ml-2'></i>
         </Link>
       </div>

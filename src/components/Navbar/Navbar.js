@@ -49,7 +49,7 @@ const Navbar = () => {
                     ? '/en'
                     : '/'
                 }
-                className='flex items-center mr-6 lg:w-1/4 xl:w-1/5 md:w-1/3 w-1/2'
+                className='flex items-center mr-10 lg:w-1/4 xl:w-1/5 md:w-1/3 w-1/2'
               >
                 <img
                   src={logo_icon}
