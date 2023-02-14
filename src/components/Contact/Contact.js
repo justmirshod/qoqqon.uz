@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div className='bg-[#fff]'>
       <div className='grid md:grid-cols-7 grid-cols-1'>
-        <div className='md:col-span-3 col-span-1 pb-10 md:pt-32 pt-10 md:px-[70px] px-10'>
+        <div className='md:col-span-3 col-span-1 md:flex px-10 md:px-16 py-10 md:py-0 md:flex-col md:justify-center'>
           <h1 className='text-3xl mb-10'>{connection[activeLang]}</h1>
           <ul className='flex flex-col'>
             <li className='flex items-center text-xl text-gray-800  mb-8'>
