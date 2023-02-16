@@ -1,5 +1,6 @@
 import translit from 'latin-to-cyrillic';
 const baseURL = 'https://abdusamad4803.pythonanywhere.com';
+const onlineUrl = 'https://qoqon-uz.vercel.app';
 
 const adaptBtn = (item, path) => {
   let b = path;
@@ -115,4 +116,11 @@ const handleDateTime = (dateString, activeLang) => {
   return monthName + ' ' + day + ', ' + year;
 };
 
-export { baseURL, replaceKrill, adaptToLanguage, handleDateTime, adaptBtn };
+export {
+  baseURL,
+  onlineUrl,
+  replaceKrill,
+  adaptToLanguage,
+  handleDateTime,
+  adaptBtn,
+};

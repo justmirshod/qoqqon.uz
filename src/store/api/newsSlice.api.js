@@ -12,7 +12,13 @@ const initialState = {
 
 export const getAllNews = createAsyncThunk(
   'news/getAllNews',
-  async ({ category, search, popular, page, page_size }) => {
+  async ({
+    category = '',
+    search = '',
+    popular = '',
+    page = 1,
+    page_size = 10,
+  }) => {
     const { request } = useHttp();
     return await request({
       url: `https://abdusamad4803.pythonanywhere.com/api/v1/blog/posts/?category=${category}&search=${search}&popular=${popular}&page=${page}&page_size=${page_size}`,

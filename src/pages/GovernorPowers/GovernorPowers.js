@@ -6,14 +6,21 @@ import translit from 'latin-to-cyrillic';
 import { replaceKrill } from '../../config/config';
 import { Link } from 'react-router-dom';
 import { Contact } from '../../components';
+import Loader from '../../components/Loader/Loader';
 export default function GovernorPowers() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.power);
   const { activeLang } = useSelector((state) => state.language);
 
   useEffect(() => {
+    if (data.id) return;
     dispatch(fetchGovernorPowers());
+
+    //eslint-disable-next-line
   }, []);
+
+  if (loading) <Loader />;
+  if (!data.id) return;
 
   return (
     <div className=''>
