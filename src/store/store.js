@@ -31,7 +31,6 @@ const store = configureStore({
     map,
     power,
     managerAsistants,
-    manager,
     leader: leaderSlice,
     governors: governorsSlice,
     singleGovernor: singleGovernorSlice,
