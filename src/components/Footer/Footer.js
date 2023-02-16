@@ -30,13 +30,13 @@ export default function Footer() {
               </Link>
               <div className='md:mt-10 flex items-center'>
                 <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-200 rounded-full mr-4 flex items-center justify-center text-blue-700 text-xl'>
-                  <i class='fa-brands fa-facebook-f'></i>
+                  <i className='fa-brands fa-facebook-f'></i>
                 </div>
                 <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-200 rounded-full mr-4 flex items-center justify-center text-blue-700 text-xl'>
-                  <i class='fa-brands fa-instagram'></i>
+                  <i className='fa-brands fa-instagram'></i>
                 </div>
                 <div className='w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-blue-200 rounded-full mr-4 flex items-center justify-center text-blue-700 text-xl'>
-                  <i class='fa-regular fa-paper-plane'></i>
+                  <i className='fa-regular fa-paper-plane'></i>
                 </div>
               </div>
             </div>

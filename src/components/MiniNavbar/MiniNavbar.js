@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import MiniNavbarItem from './MiniNavbarItem';
 import routes from '../../translations/routes.json';
 import { useEffect } from 'react';
+import { v4 } from 'uuid';
 
 export default function MiniNavbar({ show, setShow }) {
   const { activeLang } = useSelector((state) => state.language);
@@ -17,7 +18,7 @@ export default function MiniNavbar({ show, setShow }) {
         <div className='relative'>
           <ul className='grid grid-cols-1 md:grid-cols-2 w-full bg-[#fff] lg:px-10 py-14'>
             {routes[activeLang].map((item) => (
-              <MiniNavbarItem {...item} />
+              <MiniNavbarItem key={v4()} {...item} />
             ))}
           </ul>
           <div
@@ -29,7 +30,7 @@ export default function MiniNavbar({ show, setShow }) {
               }, 100);
             }}
           >
-            <i class='fa-solid fa-xmark text-2xl'></i>
+            <i className='fa-solid fa-xmark text-2xl'></i>
           </div>
         </div>
       </div>

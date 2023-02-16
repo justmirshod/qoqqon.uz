@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { useHttp } from '../../hooks/useHttp';
 
 const initialState = {
-  manager: {},
+  data: {},
   loading: false,
 };
 
@@ -24,7 +24,7 @@ const managerAsistantSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchManager.fulfilled, (state, { payload }) => {
-        state.manager = payload;
+        state.data = payload;
         state.loading = false;
       });
   },

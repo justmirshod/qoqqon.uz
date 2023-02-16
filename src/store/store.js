@@ -10,7 +10,7 @@ import placesSlice from './api/placesSlice';
 import categoriesSlice from './api/categoriesSlice';
 import langSlice from '../components/Navbar/navbar_slice';
 import power from '../pages/GovernorPowers/power_slice';
-import manager from '../pages/ManagerAsistant/managers_slice';
+import managerAsistants from '../pages/ManagerAsistant/managers_slice';
 
 import leaderSlice from './api/leaderSlice.api';
 import governorsSlice from './api/governorsSlice.api';
@@ -30,6 +30,7 @@ const store = configureStore({
     moreNews: moreNewsSlice,
     map,
     power,
+    managerAsistants,
     manager,
     leader: leaderSlice,
     governors: governorsSlice,
