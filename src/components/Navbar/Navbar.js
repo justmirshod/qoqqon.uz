@@ -143,7 +143,7 @@ const Navbar = () => {
                     className='w-10 h-10 xl:hidden'
                     onClick={() => {
                       setShowModal(true);
-                      // document.body.style.overflow = 'hidden';
+                      document.body.style.overflow = 'hidden';
                     }}
                   >
                     <i className='fa-solid fa-bars text-2xl font-semibold'></i>

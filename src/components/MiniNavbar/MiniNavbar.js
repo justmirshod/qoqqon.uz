@@ -25,9 +25,9 @@ export default function MiniNavbar({ show, setShow }) {
             className='absolute top-7 right-7 cursor-pointer'
             onClick={() => {
               setShow(false);
-              // setTimeout(() => {
-              //   document.body.style.overflow = 'initial';
-              // }, 100);
+              setTimeout(() => {
+                document.body.style.overflow = 'initial';
+              }, 100);
             }}
           >
             <i className='fa-solid fa-xmark text-2xl'></i>
