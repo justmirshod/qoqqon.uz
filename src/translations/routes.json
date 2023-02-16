@@ -4,36 +4,31 @@
       "name": "Hokimiyat haqida",
       "links": [
         {
-          "name": "Rahbariyat",
-          "link": "uz/management"
+          "name": "Shahar hokimi",
+          "link": "/uz/hokim"
         },
         {
-          "name": "Apparat",
-          "link": "uz/apparats"
+          "name": "Hokim orinbosarlari",
+          "link": "/uz/hokim-orinbosarlari"
         },
+
         {
           "name": "Hokim vakolatlari",
-          "link": "uz/powers-of-governor"
+          "link": "/uz/powers-of-governor"
         },
-        {
-          "name": "Tarkibiy tuzilma",
-          "link": "uz/structure"
-        },
+
         {
           "name": "Fuqarolarni qabul qiish tartibi",
-          "link": "uz/procedure"
+          "link": "/uz/procedure"
         },
-        {
-          "name": "Tuman tasarrufidagi tashkilotlar",
-          "link": "uz/subdivisions"
-        },
+
         {
           "name": "Hokimning yordamchilari",
-          "link": "uz/manager-asistants"
+          "link": "/uz/manager-asistants"
         },
         {
           "name": "Bo'sh ish o'rinlari",
-          "link": "uz/vacancies"
+          "link": "/uz/vacancies"
         }
       ]
     },
@@ -94,36 +89,30 @@
       "name": "О хокимияте",
       "links": [
         {
-          "name": "Лидерство",
-          "link": "ru/management"
+          "name": "Мэр города",
+          "link": "/ru/hokim"
         },
         {
-          "name": "Аппарат",
-          "link": "ru/apparats"
+          "name": "Заместители губернаторов",
+          "link": "/ru/hokim-orinbosarlari"
         },
         {
           "name": "Полномочия мэра",
-          "link": "ru/powers-of-governor"
+          "link": "/ru/powers-of-governor"
         },
-        {
-          "name": "Структура",
-          "link": "ru/structure"
-        },
+
         {
           "name": "Порядок приема граждан",
-          "link": "ru/procedure"
+          "link": "/ru/procedure"
         },
-        {
-          "name": "Районные организации",
-          "link": "ru/subdivisions"
-        },
+
         {
           "name": "Помощники мэра",
-          "link": "ru/manager-asistants"
+          "link": "/ru/manager-asistants"
         },
         {
           "name": "Вакансии",
-          "link": "ru/vacancies"
+          "link": "/ru/vacancies"
         }
       ]
     },
@@ -184,29 +173,24 @@
       "name": "Ҳокимият ҳақида",
       "links": [
         {
-          "name": "Раҳбарият",
-          "link": "/management"
+          "name": "Шаҳар ҳокими",
+          "link": "/hokim"
         },
         {
-          "name": "Aппарат",
-          "link": "/apparats"
+          "name": "Ҳоким ўринбосарлари",
+          "link": "/hokim-orinbosarlari"
         },
+
         {
           "name": "Ҳоким ваколатлари",
           "link": "/powers-of-governor"
         },
-        {
-          "name": "Таркибий тузилма",
-          "link": "/structure"
-        },
+
         {
           "name": "Фуқароларни қабул қииш тартиби",
           "link": "/procedure"
         },
-        {
-          "name": "Туман тасарруфидаги ташкилотлар",
-          "link": "/subdivisions"
-        },
+
         {
           "name": "Ҳокимнинг ёрдамчилари",
           "link": "/manager-asistants"
@@ -274,28 +258,20 @@
       "name": "About khokimiyat",
       "links": [
         {
-          "name": "Management",
-          "link": "/en/management"
+          "name": "Governor",
+          "link": "/en/hokim"
         },
         {
-          "name": "Appartas",
-          "link": "/en/apparats"
+          "name": "Deputy governors",
+          "link": "/en/hokim-orinbosarlari"
         },
         {
           "name": "Powers of governor",
           "link": "/en/powers-of-governor"
         },
         {
-          "name": "Structure",
-          "link": "/en/structure"
-        },
-        {
           "name": "The procedure of receiving citizens",
           "link": "/en/procedure"
-        },
-        {
-          "name": "Subdivisions",
-          "link": "/en/subdivisions"
         },
         {
           "name": "Manager asistants",
