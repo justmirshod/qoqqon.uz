@@ -13,7 +13,7 @@ export default function MiniNavbar({ show, setShow }) {
       <div
         className={`w-screen h-screen ${
           show ? '' : '-translate-y-full'
-        } duration-500 bg-[#fff] z-50 top-0 absolute right-0 overflow-y-scroll md:overflow-y-hidden`}
+        } duration-500 bg-[#fff] z-50 top-0 absolute right-0 overflow-y-scroll`}
       >
         <div className='relative'>
           <ul className='grid grid-cols-1 md:grid-cols-2 w-full bg-[#fff] lg:px-10 py-14'>
