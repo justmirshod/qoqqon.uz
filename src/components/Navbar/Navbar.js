@@ -12,6 +12,7 @@ import MiniNavbar from '../MiniNavbar/MiniNavbar';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { replaceKrill, adaptBtn } from '../../config/config';
+import { v4 } from 'uuid';
 
 const langs = ['ўз', 'uz', 'en', 'ru'];
 
@@ -68,8 +69,8 @@ const Navbar = () => {
               </Link>
               <ul className='flex items-center justify-end xl:justify-between w-4/5'>
                 <div className='xl:flex items-center hidden'>
-                  {routes[activeLang].map((item, index, arr) => (
-                    <NavbarRoutes key={item.name} item={item} />
+                  {routes[activeLang].map((item) => (
+                    <NavbarRoutes key={v4()} item={item} />
                   ))}
                 </div>
 
@@ -116,6 +117,7 @@ const Navbar = () => {
                             navigate(adaptBtn(item, location.pathname));
                             dispatch(setShowLangs(false));
                           }}
+                          key={v4()}
                         >
                           {item}
                         </li>
@@ -144,7 +146,7 @@ const Navbar = () => {
                       document.body.style.overflow = 'hidden';
                     }}
                   >
-                    <i class='fa-solid fa-bars text-2xl font-semibold'></i>
+                    <i className='fa-solid fa-bars text-2xl font-semibold'></i>
                   </button>
                 </div>
               </ul>

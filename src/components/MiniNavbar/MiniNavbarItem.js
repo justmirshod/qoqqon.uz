@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { v4 } from 'uuid';
 export default function MiniNavbarItem({ name, links }) {
   return (
     <>
@@ -10,6 +11,7 @@ export default function MiniNavbarItem({ name, links }) {
             <Link
               to={item.link}
               className='text-[#717171] hover:text-blue-600 cursor-pointer block my-3'
+              key={v4()}
             >
               {item.name}
             </Link>
