@@ -6,11 +6,12 @@ import newsSliceApi from './api/newsSlice.api';
 import newsCategoriesSlice from './api/categoriesSlice.api';
 import singleNewsSlice from './api/siingleNewsSlice.api';
 import moreNewsSlice from './api/moreNewsSlice.api';
-
 import placesSlice from './api/placesSlice';
 import categoriesSlice from './api/categoriesSlice';
 import langSlice from '../components/Navbar/navbar_slice';
-
+import leaderSlice from './api/leaderSlice.api';
+import governorsSlice from './api/governorsSlice.api';
+import singleGovernorSlice from './api/singleGovernorSlice.api';
 import map from '../pages/Map/MapSlice';
 
 const store = configureStore({
@@ -25,6 +26,9 @@ const store = configureStore({
     singleNews: singleNewsSlice,
     moreNews: moreNewsSlice,
     map,
+    leader: leaderSlice,
+    governors: governorsSlice,
+    singleGovernor: singleGovernorSlice,
   },
 });
 

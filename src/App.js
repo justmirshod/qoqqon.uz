@@ -5,7 +5,7 @@ import Deputy from './pages/Deputies/Deputy/Deputy';
 import News from './pages/News/News';
 import SingleNews from './pages/SingleNews/SingleNews';
 import Management from './pages/Management/Management';
-
+import SingleGovernor from './pages/SingleGovernor/SingleGovernor';
 import GeneralInfo from './pages/GeneralInfo/GeneralInfo';
 import InterestingPlaces from './pages/InterestingPlaces/InterestingPlaces';
 import Place from './pages/InterestingPlaces/Place/Place';
@@ -15,6 +15,7 @@ import { v4 } from 'uuid';
 
 import Map from './pages/Map/Map';
 import Footer from './components/Footer/Footer';
+import Governors from './pages/Governors/Governors';
 
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
@@ -111,10 +112,26 @@ function App() {
                   }
                 />
                 <Route
-                  path={handleRoutes(lang, '/management')}
+                  path={handleRoutes(lang, '/hokim')}
                   element={
                     <UniversalRoute>
                       <Management />
+                    </UniversalRoute>
+                  }
+                />
+                <Route
+                  path={handleRoutes(lang, '/hokim-orinbosarlari')}
+                  element={
+                    <UniversalRoute>
+                      <Governors />
+                    </UniversalRoute>
+                  }
+                />
+                <Route
+                  path={handleRoutes(lang, '/hokim-orinbosarlari/:id/:name')}
+                  element={
+                    <UniversalRoute>
+                      <SingleGovernor />
                     </UniversalRoute>
                   }
                 />

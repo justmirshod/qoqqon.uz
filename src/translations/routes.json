@@ -8,8 +8,12 @@
           "link": "uz/goals-and-objectives"
         },
         {
-          "name": "Rahbariyat",
-          "link": "uz/management"
+          "name": "Shahar hokimi",
+          "link": "uz/hokim"
+        },
+        {
+          "name": "Hokim o'rinbosarlari",
+          "link": "uz/hokim-o'rinbosarlari"
         },
         {
           "name": "Apparat",
@@ -98,8 +102,12 @@
           "link": "/goals-and-objectives"
         },
         {
-          "name": "Раҳбарият",
-          "link": "/management"
+          "name": "Шаҳар ҳокими",
+          "link": "/hokim"
+        },
+        {
+          "name": "Ҳоким ўринбосарлари",
+          "link": "/hokim-orinbosarlari"
         },
         {
           "name": "Aппарат",
