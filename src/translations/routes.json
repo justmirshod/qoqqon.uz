@@ -5,30 +5,30 @@
       "links": [
         {
           "name": "Shahar hokimi",
-          "link": "uz/hokim"
+          "link": "/uz/hokim"
         },
         {
           "name": "Hokim orinbosarlari",
-          "link": "uz/hokim-orinbosarlari"
+          "link": "/uz/hokim-orinbosarlari"
         },
 
         {
           "name": "Hokim vakolatlari",
-          "link": "uz/powers-of-governor"
+          "link": "/uz/powers-of-governor"
         },
 
         {
           "name": "Fuqarolarni qabul qiish tartibi",
-          "link": "uz/procedure"
+          "link": "/uz/procedure"
         },
 
         {
           "name": "Hokimning yordamchilari",
-          "link": "uz/manager-asistants"
+          "link": "/uz/manager-asistants"
         },
         {
           "name": "Bo'sh ish o'rinlari",
-          "link": "uz/vacancies"
+          "link": "/uz/vacancies"
         }
       ]
     },
@@ -90,29 +90,29 @@
       "links": [
         {
           "name": "Мэр города",
-          "link": "ru/hokim"
+          "link": "/ru/hokim"
         },
         {
           "name": "Заместители губернаторов",
-          "link": "ru/hokim-orinbosarlari"
+          "link": "/ru/hokim-orinbosarlari"
         },
         {
           "name": "Полномочия мэра",
-          "link": "ru/powers-of-governor"
+          "link": "/ru/powers-of-governor"
         },
 
         {
           "name": "Порядок приема граждан",
-          "link": "ru/procedure"
+          "link": "/ru/procedure"
         },
 
         {
           "name": "Помощники мэра",
-          "link": "ru/manager-asistants"
+          "link": "/ru/manager-asistants"
         },
         {
           "name": "Вакансии",
-          "link": "ru/vacancies"
+          "link": "/ru/vacancies"
         }
       ]
     },
@@ -263,7 +263,7 @@
         },
         {
           "name": "Deputy governors",
-          "link": "ru/hokim-orinbosarlari"
+          "link": "/en/hokim-orinbosarlari"
         },
         {
           "name": "Powers of governor",
