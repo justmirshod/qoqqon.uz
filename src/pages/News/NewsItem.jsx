@@ -4,65 +4,67 @@ import { Link, useNavigate } from 'react-router-dom';
 import { replaceKrill } from '../../config/config';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveCategory } from '../../store/api/categoriesSlice.api';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
+import { handleDateTime } from '../../config/config';
 
 function NewsItem({ translations, categories, image, created_at, views, id }) {
   const { activeLang } = useSelector((state) => state.language);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleDateTime = (dateString) => {
-    const months = {
-      en: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
-      ru: [
-        'Январь',
-        'Февраль',
-        'Март',
-        'Апрель',
-        'Май',
-        'Июнь',
-        'Июль',
-        'Август',
-        'Сентябрь',
-        'Октябрь',
-        'Ноябрь',
-        'Декабрь',
-      ],
-      uz: [
-        'Yanvar',
-        'Fevral',
-        'Mart',
-        'Aprel',
-        'May',
-        'Iyun',
-        'Iyul',
-        'Avgust',
-        'Sentabr',
-        'Oktabr',
-        'Noyabr',
-        'Dekabr',
-      ],
-    };
-    const date = new Date(dateString);
-    const monthIndex = date.getMonth();
-    const monthName = months.uz[monthIndex];
+  // const handleDateTime = (dateString) => {
+  //   const months = {
+  //     en: [
+  //       'January',
+  //       'February',
+  //       'March',
+  //       'April',
+  //       'May',
+  //       'June',
+  //       'July',
+  //       'August',
+  //       'September',
+  //       'October',
+  //       'November',
+  //       'December',
+  //     ],
+  //     ru: [
+  //       'Январь',
+  //       'Февраль',
+  //       'Март',
+  //       'Апрель',
+  //       'Май',
+  //       'Июнь',
+  //       'Июль',
+  //       'Август',
+  //       'Сентябрь',
+  //       'Октябрь',
+  //       'Ноябрь',
+  //       'Декабрь',
+  //     ],
+  //     uz: [
+  //       'Yanvar',
+  //       'Fevral',
+  //       'Mart',
+  //       'Aprel',
+  //       'May',
+  //       'Iyun',
+  //       'Iyul',
+  //       'Avgust',
+  //       'Sentabr',
+  //       'Oktabr',
+  //       'Noyabr',
+  //       'Dekabr',
+  //     ],
+  //   };
+  //   const date = new Date(dateString);
+  //   const monthIndex = date.getMonth();
+  //   const monthName = months.uz[monthIndex];
 
-    const day = date.getDate();
-    const year = date.getFullYear();
-    return monthName + ' ' + day + ', ' + year;
-  };
+  //   const day = date.getDate();
+  //   const year = date.getFullYear();
+  //   return monthName + ' ' + day + ', ' + year;
+  // };
 
   const renderCategories = (categoryList) => {
     const colors = ['red', 'yellow', 'blue', 'green'];
@@ -88,7 +90,9 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
           key={item.id}
           className={itemClassname}
         >
-          {item?.translations?.uz?.name}
+          {activeLang === 'ўз'
+            ? latinToCyrillic(item?.translations?.uz?.name)
+            : item?.translations[activeLang]?.name}
         </div>
       );
     });
@@ -114,17 +118,23 @@ function NewsItem({ translations, categories, image, created_at, views, id }) {
           </div>
           <Link to={replaceKrill(activeLang) + `/news/${id}`}>
             <p className='news-item__right-side--title text-[#33354d] mt-4 hover:text-[#6366f1] cursor-pointer transition-colors duration-125 delay-75 ease-linear'>
-              {translations?.uz?.title}
+              {activeLang === 'ўз'
+                ? latinToCyrillic(translations?.uz?.title)
+                : translations[activeLang]?.title}
             </p>
           </Link>
 
           <p className='news-item__right-side--description text-[#575a74] leading-6 text-[14px] mt-2'>
-            {translations?.uz?.description}
+            {activeLang === 'ўз'
+              ? latinToCyrillic(translations?.uz?.description)
+              : translations[activeLang]?.description}
           </p>
         </div>
         <div className='bottom-side'>
           <div className='news-item__right-side--details flex text-[0.875rem] text-[#9397ad]'>
-            <p className='details-date mr-5 '>{handleDateTime(created_at)}</p>
+            <p className='details-date mr-5 '>
+              {handleDateTime(created_at, activeLang)}
+            </p>
             <p className='detail-views'>
               <i className='fa-solid fa-eye '></i>
               <span className='ml-1'>{views}</span>

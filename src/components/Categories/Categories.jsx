@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
 import {
   getAllCategories,
   setActiveCategory,
@@ -8,10 +9,15 @@ import {
   setQuery,
 } from '../../store/api/categoriesSlice.api';
 
+//translations
+import generalTranslations from '../../translations/general.json';
+import categoryTrans from './translations.json';
+
 function Categories({ setShowFilter, showFilters }) {
   const { categories, loadingCat, activeCategory } = useSelector(
     (state) => state.newsCategories
   );
+  const { activeLang } = useSelector((state) => state.language);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -37,7 +43,9 @@ function Categories({ setShowFilter, showFilters }) {
           key={item.id}
           className={catClass}
         >
-          {item?.translations?.uz?.name}
+          {activeLang === 'ўз'
+            ? latinToCyrillic(item?.translations?.uz?.name)
+            : item?.translations[activeLang]?.name}
         </p>
       );
     });
@@ -74,7 +82,7 @@ function Categories({ setShowFilter, showFilters }) {
             <input
               className='bg-[transparent] border rounded-md border-[#e2e5f1]  focus:outline-none  focus:shadow-searchShadow focus:border-[#6366f159] text-[14px] px-2 py-3  pr-9  w-full transition-shadow duration-125 delay-74 ease-linear'
               type='text'
-              placeholder='Qidiruv'
+              placeholder={categoryTrans.search[activeLang]}
               name='query'
             />
           </form>
@@ -83,13 +91,15 @@ function Categories({ setShowFilter, showFilters }) {
           </button>
         </div>
         <div className='categories-list mt-5 p-4 pt-6 border rounded-md border-[#e2e5f1]'>
-          <p className='section-header pb-4 text-[22px] '>Kategoriyalar</p>
+          <p className='section-header pb-4 text-[22px] '>
+            {categoryTrans.categories[activeLang]}
+          </p>
 
           {renderCategories(categories)}
         </div>
         <div className='social-links mt-5 p-4 pt-6 border rounded-md border-[#e2e5f1]'>
           <p className='section-header pb-4 text-[22px] '>
-            Biz bilan bog'laning
+            {categoryTrans.connectWithUs[activeLang]}
           </p>
           <div className='socials flex items-center gap-3 '>
             <div className='icon-wrapper flex items-center justify-center p-2 bg-[#e0e4f0] rounded-sm hover:bg-[#b30734] cursor-pointer'>

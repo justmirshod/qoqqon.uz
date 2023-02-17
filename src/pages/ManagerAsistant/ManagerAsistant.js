@@ -20,6 +20,7 @@ import ManagerAsistantItem from './ManagerAsistantItem';
 import generalTranslations from '../../translations/general.json';
 import translations from './translation.json';
 import outTrans from '../Governors/governor.json';
+import Loader from '../../components/Loader/Loader';
 
 export default function ManagerAsistant() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function ManagerAsistant() {
   const { data, loading } = useSelector((state) => state.managerAsistants);
 
   useEffect(() => {
+    console.log('Hello world');
     dispatch(fetchManager());
   }, []);
   return (
@@ -42,7 +44,7 @@ export default function ManagerAsistant() {
           <p>{outTrans.asistants[activeLang]}</p>
         </div>
         {loading ? (
-          'Loading...'
+          <Loader />
         ) : (
           <div className='grid lg:grid-cols-2 grid-cols-1 gap-10'>
             {data?.results?.map((item) => (
