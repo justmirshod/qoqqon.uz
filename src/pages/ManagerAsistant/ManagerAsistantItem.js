@@ -1,6 +1,13 @@
 //hooks
 import { useSelector } from 'react-redux';
 
+//config
+import { onlineUrl } from '../../config/config';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
+
+//translations
+import generalTranslations from '../../translations/general.json';
+
 export default function ManagerAsistantItem({
   id,
   translations,
@@ -20,18 +27,20 @@ export default function ManagerAsistantItem({
           <div>
             <h1 className='text-xl mb-2'>
               {activeLang === 'ўз'
-                ? translations?.uz?.full_name
+                ? latinToCyrillic(translations?.uz?.full_name)
                 : translations[activeLang]?.full_name}
             </h1>
             <p className='text-[#717171]'>
               {activeLang === 'ўз'
-                ? translations?.uz?.about
+                ? latinToCyrillic(translations?.uz?.about)
                 : translations[activeLang]?.about}
             </p>
           </div>
           <div className='flex items-center justify-between mt-auto'>
             <p className='text-blue-700'>{phone_number}</p>
-            <button className=''>Bog'lanish</button>
+            <a href={onlineUrl} className=''>
+              {generalTranslations.connection[activeLang]}
+            </a>
           </div>
         </div>
       </div>

@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { latinToCyrillic } from '../../../hooks/useLatinToCrylic';
 import { fetchHokim } from '../../../store/api/leaderSlice.api';
+import translation from './leader.json';
 
 function Leader() {
   const dispatch = useDispatch();
   const { hokim } = useSelector((state) => state.leader);
+  const { activeLang } = useSelector((state) => state.language);
   useEffect(() => {
     if (hokim.results) return;
     dispatch(fetchHokim());
@@ -29,7 +32,9 @@ function Leader() {
       return (
         <div key={item.id} className='flex gap-3 items-center'>
           <p className='text-[#33354d] leading-8'>
-            {item?.translations?.uz?.name}:
+            {activeLang === 'ўз'
+              ? latinToCyrillic(item?.translations?.uz?.name)
+              : item?.translations[activeLang]?.name}
           </p>
           <a
             className='text-[18px] hover:text-[#6366f1]'
@@ -77,16 +82,22 @@ function Leader() {
     <div className='leader flex gap-3'>
       <div className='leader-infos mb-40 min-[0px]:w-3/5'>
         <h1 className='text-[60px] text-[#33354d] '>
-          {hokim?.results[0]?.translations?.uz?.full_name}
+          {activeLang === 'ўз'
+            ? latinToCyrillic(hokim?.results[0]?.translations?.uz?.full_name)
+            : hokim?.results[0]?.translations[activeLang].full_name}
         </h1>
         <p className='leader-infos__content text-[#575a74] leading-8 text-[15px] mt-4'>
-          {hokim?.results[0]?.translations?.uz?.about}
+          {activeLang === 'ўз'
+            ? latinToCyrillic(hokim?.results[0]?.translations?.uz?.about)
+            : hokim?.results[0]?.translations[activeLang].about}
         </p>
 
         <div className='w-[100px] my-5 h-[5px] bg-slate-500'></div>
 
         <div className='social-media'>
-          <h1 className='text-[20px] mb-4'>Ijtimoiy tarmoqlar</h1>
+          <h1 className='text-[20px] mb-4'>
+            {translation['social-pages'][activeLang]}
+          </h1>
           {renderSocialNumbers(hokim.results[0].social_pages)}
           <div className='social-pages mt-4 flex gap-4'>
             {renderSocialPages(hokim.results[0].social_pages)}

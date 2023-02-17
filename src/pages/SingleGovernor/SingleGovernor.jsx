@@ -4,11 +4,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchGovernor } from '../../store/api/singleGovernorSlice.api';
 import Container from '../../layouts/Container/Container';
 import Loader from '../../components/Loader/Loader';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
+import generalTranslations from '../../translations/general.json';
+import translations from '../Governors/governor.json';
 
 function SingleGovernor(props) {
   const { governor, governorLoading } = useSelector(
     (state) => state.singleGovernor
   );
+  const { activeLang } = useSelector((state) => state.language);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -31,7 +35,9 @@ function SingleGovernor(props) {
               {item.from_date.split('-')[0]} - {item.to_date.split('-')[0]}:
             </span>
             <span className='ml-1 text-[#33354d] '>
-              {item?.translations?.uz?.name}
+              {activeLang === 'ўз'
+                ? latinToCyrillic(item?.translations?.uz?.name)
+                : item?.translations[activeLang]?.name}
             </span>
           </p>
         </div>
@@ -50,16 +56,18 @@ function SingleGovernor(props) {
 
   return (
     <Container className='mt-10'>
-      <h1 className='page-route text-[#797f8c] my-[20px] text-[18px]'>
-        <Link to={'/'}>Bosh sahifa </Link>
-        <span>{'>'}</span>
-        <Link to={'/hokim-orinbosarlari'}> Hokim o'rinbosarlari </Link>
-        <span>{'> '}</span>
-        <Link
-          to={`/hokim-orinbosarlari/${id}/${governor?.translations?.uz?.full_name}`}
-        >
-          {governor?.translations?.uz?.full_name}
+      <h1 className='page-route text-[#797f8c] my-[20px] text-[18px] flex items-center'>
+        <Link to={'/'}>{generalTranslations.home[activeLang]}</Link>
+        <i class='fa-solid fa-angle-right mx-2'></i>
+        <Link to={'/hokim-orinbosarlari'}>
+          {translations.asistants[activeLang]}
         </Link>
+        <i class='fa-solid fa-angle-right mx-2'></i>
+        <div className='inline-block'>
+          {activeLang === 'ўз'
+            ? latinToCyrillic(governor?.translations?.uz?.full_name)
+            : governor?.translations[activeLang]?.full_name}
+        </div>
       </h1>
       <div className='single-governor'>
         <div className='single-governor__top-side flex gap-10 min-[0px]:flex-col sm:flex-row'>
@@ -68,10 +76,14 @@ function SingleGovernor(props) {
           </div>
           <div className='details-box min-[0px]:w-full sm:w-[2/3]'>
             <p className='text-[24px]  text-[#33354d]'>
-              {governor?.translations?.uz?.full_name}
+              {activeLang === 'ўз'
+                ? latinToCyrillic(governor?.translations?.uz?.full_name)
+                : governor?.translations[activeLang]?.full_name}
             </p>
             <p className='department  mt-3 text-[#575a74] leading-6 text-[16px]'>
-              {governor?.translations?.uz?.about}
+              {activeLang === 'ўз'
+                ? latinToCyrillic(governor?.translations?.uz?.about)
+                : governor?.translations[activeLang]?.about}
             </p>
             <div className='contact-details mt-3 text-[#838e91] min-[0px]:hidden sm:block'>
               <p className='leading-5'>
