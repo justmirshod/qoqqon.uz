@@ -9,6 +9,7 @@ import { Contact } from '../../components';
 import Loader from '../../components/Loader/Loader';
 import generalTranslations from '../../translations/general.json';
 import translations from './power.json';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
 export default function GovernorPowers() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.power);
@@ -40,7 +41,9 @@ export default function GovernorPowers() {
         ) : (
           <div className='text-lg mb-10 text-gray-600 leading-loose'>
             {activeLang === 'ўз'
-              ? data?.translations?.uz?.text.replace(/<[^>]*>/g, '')
+              ? latinToCyrillic(
+                  data?.translations?.uz?.text.replace(/<[^>]*>/g, '')
+                )
               : data?.translations[activeLang]?.text.replace(/<[^>]*>/g, '')}
           </div>
         )}

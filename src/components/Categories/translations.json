@@ -1,0 +1,20 @@
+{
+  "categories": {
+    "uz": "Kategoriyalar",
+    "en": "Categories",
+    "ru": "Категории",
+    "ўз": "Категориялар"
+  },
+  "connectWithUs": {
+    "uz": "Biz bilan bog'laning",
+    "en": "Connect with us",
+    "ru": "Связаться с нами",
+    "ўз": "Биз билан боғланинг"
+  },
+  "search": {
+    "uz": "Qidiruv",
+    "en": "Seacrh",
+    "ru": "Поиск",
+    "ўз": "Қидирув"
+  }
+}

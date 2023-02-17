@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-loading';
 
 import Deputies from './pages/Deputies/Deputies';
 import Deputy from './pages/Deputies/Deputy/Deputy';
-import News from './pages/News/News';
+import News from './pages/News/News.jsx';
 import SingleNews from './pages/SingleNews/SingleNews';
 import Management from './pages/Management/Management';
 import SingleGovernor from './pages/SingleGovernor/SingleGovernor';

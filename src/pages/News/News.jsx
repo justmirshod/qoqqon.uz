@@ -14,11 +14,17 @@ import Pagination from '../../components/Pagination/Pagination';
 import { setCategoryPageIndex } from '../../store/api/categoriesSlice.api';
 import Loader from '../../components/Loader/Loader';
 
+//translations
+import generalTranslations from '../../translations/general.json';
+import translations from './news.json';
+import { replaceKrill } from '../../config/config';
+
 function News() {
   const { news, loading } = useSelector((state) => state.news);
   const { activeCategory, categories, query } = useSelector(
     (state) => state.newsCategories
   );
+  const { activeLang } = useSelector((state) => state.language);
   const [showFilters, setShowFilter] = useState(false);
 
   const dispatch = useDispatch();
@@ -99,12 +105,18 @@ function News() {
         }`}
       >
         <h1 className='page-route text-[#797f8c] my-[20px] text-[18px]'>
-          <Link to={'/'}>Bosh sahifa </Link>
-          <span>{'>'}</span>
-          <Link to={'/news'}> Yangiliklar</Link>
+          <Link to={`${replaceKrill(activeLang)}/`}>
+            {generalTranslations.home[activeLang]}
+          </Link>
+          <i class='fa-solid fa-angle-right mx-2'></i>
+          <Link to={`${replaceKrill(activeLang)}/news`}>
+            {translations.news[activeLang]}
+          </Link>
         </h1>
         <section className='allnews-container w-full '>
-          <h1 className='section-route text-[24px] mb-[10px]'>Yangiliklar</h1>
+          <h1 className='section-route text-[24px] mb-[10px]'>
+            {translations.news[activeLang]}
+          </h1>
           <div className={`section-content flex gap-20 `}>
             <div className='section-content__news  lg:w-3/4  sm:w-full'>
               {loading ? <Loader /> : renderAllNews()}
