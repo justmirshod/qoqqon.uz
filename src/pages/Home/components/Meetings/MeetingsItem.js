@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { handleDateTime, replaceKrill } from '../../../../config/config';
 import translit from 'latin-to-cyrillic';
+import { latinToCyrillic } from '../../../../hooks/useLatinToCrylic';
 export default function MeetingsItem({
   id,
   translations,
@@ -29,12 +30,12 @@ export default function MeetingsItem({
             <div>
               <h1 className='text-lg font-semibold leading-tight'>
                 {activeLang === 'ўз'
-                  ? translit(translations.uz?.title)
+                  ? latinToCyrillic(translations.uz?.title)
                   : translations[activeLang]?.title}
               </h1>
               <p className='font-semibold my-3 leading-relaxed text-gray-800'>
                 {activeLang === 'ўз'
-                  ? translit(translations?.uz?.description)
+                  ? latinToCyrillic(translations?.uz?.description)
                   : translations[activeLang]?.description}
               </p>
             </div>

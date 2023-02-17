@@ -1,0 +1,38 @@
+{
+  "home": {
+    "uz": "Bosh sahifa",
+    "en": "Home",
+    "ru": "Главный",
+    "ўз": "Бош саҳифа"
+  },
+  "connection": {
+    "uz": "Bog'lanish",
+    "en": "Connection",
+    "ru": "Связь",
+    "ўз": "Боғланиш"
+  },
+  "detail": {
+    "uz": "Batafsil",
+    "en": "More",
+    "ru": "Более",
+    "ўз": "Батафсил"
+  },
+  "booked": {
+    "uz": "Qabuliga yozilish",
+    "en": "Sign up for admission",
+    "ru": "Запишитесь на прием",
+    "ўз": "Қабулига ёзилиш"
+  },
+  "phone": {
+    "uz": "Telefon",
+    "en": "Phone",
+    "ru": "Телефон",
+    "ўз": "Телефон"
+  },
+  "connectedNews": {
+    "uz": "Aloqador yangiliklar",
+    "en": "Related news",
+    "ru": "Связанные новости",
+    "ўз": "Алоқадор янгиликлар"
+  }
+}

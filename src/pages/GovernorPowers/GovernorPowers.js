@@ -7,6 +7,8 @@ import { replaceKrill } from '../../config/config';
 import { Link } from 'react-router-dom';
 import { Contact } from '../../components';
 import Loader from '../../components/Loader/Loader';
+import generalTranslations from '../../translations/general.json';
+import translations from './power.json';
 export default function GovernorPowers() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.power);
@@ -27,12 +29,12 @@ export default function GovernorPowers() {
       <MiniContainer>
         <div className='flex items-center text-[#9e9c9c] text-lg my-5'>
           <Link to={`${replaceKrill(activeLang)}/`} className=''>
-            Bosh sahifa
+            {generalTranslations.home[activeLang]}
           </Link>
           <i class='fa-solid fa-angle-right text-sm mt-1 mx-2'></i>
-          <p>Hokim vakolatlari</p>
+          <p>{translations.powers[activeLang]}</p>
         </div>
-        <h1 className='text-3xl my-4'>Hokim vakolatlari</h1>
+        <h1 className='text-3xl my-4'>{translations.powers[activeLang]}</h1>
         {loading ? (
           'Loading'
         ) : (

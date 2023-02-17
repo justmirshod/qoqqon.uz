@@ -16,6 +16,11 @@ import { Container } from '../../layouts';
 import { replaceKrill } from '../../config/config';
 import ManagerAsistantItem from './ManagerAsistantItem';
 
+//translations
+import generalTranslations from '../../translations/general.json';
+import translations from './translation.json';
+import outTrans from '../Governors/governor.json';
+
 export default function ManagerAsistant() {
   const dispatch = useDispatch();
 
@@ -27,14 +32,14 @@ export default function ManagerAsistant() {
     dispatch(fetchManager());
   }, []);
   return (
-    <div className='py-10'>
+    <div className='pb-10'>
       <Container>
         <div className='flex items-center text-[#9e9c9c] text-lg my-5'>
           <Link to={`${replaceKrill(activeLang)}/`} className=''>
-            Bosh sahifa
+            {generalTranslations.home[activeLang]}
           </Link>
           <i className='fa-solid fa-angle-right text-sm mt-1 mx-2'></i>
-          <p>Hokim yordamchilari</p>
+          <p>{outTrans.asistants[activeLang]}</p>
         </div>
         {loading ? (
           'Loading...'

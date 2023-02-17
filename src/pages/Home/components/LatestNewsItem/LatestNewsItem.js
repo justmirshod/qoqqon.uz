@@ -5,6 +5,7 @@ import { handleDateTime } from '../../../../config/config';
 import { Link } from 'react-router-dom';
 import { replaceKrill } from '../../../../config/config';
 import translation from '../../home.json';
+import { latinToCyrillic } from '../../../../hooks/useLatinToCrylic';
 
 export default function LatestNewsItem({
   translations,
@@ -29,7 +30,7 @@ export default function LatestNewsItem({
         </div>
         <h1 className='text-lg font-semibold leading-tight my-3'>
           {activeLang === 'ўз'
-            ? translit(translations.uz?.title)
+            ? latinToCyrillic(translations.uz?.title)
             : translations[activeLang]?.title}
         </h1>
       </div>

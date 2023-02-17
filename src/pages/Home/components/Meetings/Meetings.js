@@ -9,6 +9,7 @@ import MeetingsItem from './MeetingsItem';
 import translit from 'latin-to-cyrillic';
 import meetingTranslation from './translation.json';
 import homeTranslation from '../../home.json';
+import { latinToCyrillic } from '../../../../hooks/useLatinToCrylic';
 
 export default function Meetings() {
   const dispatch = useDispatch();
@@ -77,12 +78,14 @@ export default function Meetings() {
                             </div>
                             <h1 className='text-xl font-semibold leading-tight my-3'>
                               {activeLang === 'ўз'
-                                ? translit(item.translations?.uz?.title)
+                                ? latinToCyrillic(item.translations?.uz?.title)
                                 : item.translations[activeLang]?.title}
                             </h1>
                             <p className='font-semibold my-3 leading-relaxed text-gray-800'>
                               {activeLang === 'ўз'
-                                ? translit(item.translations?.uz?.description)
+                                ? latinToCyrillic(
+                                    item.translations?.uz?.description
+                                  )
                                 : item.translations[activeLang]?.description}
                             </p>
                           </div>
