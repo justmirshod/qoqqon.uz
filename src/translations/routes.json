@@ -8,6 +8,10 @@
           "link": "/uz/hokim"
         },
         {
+          "name": "Sayyor qabul",
+          "link": "uz/news?category=sayyor-qabul"
+        },
+        {
           "name": "Hokim orinbosarlari",
           "link": "/uz/hokim-orinbosarlari"
         },
@@ -91,6 +95,10 @@
         {
           "name": "Мэр города",
           "link": "/ru/hokim"
+        },
+        {
+          "name": "Мобильный прием",
+          "link": "ru/news?category=sayyor-qabul"
         },
         {
           "name": "Заместители губернаторов",
@@ -177,6 +185,10 @@
           "link": "/hokim"
         },
         {
+          "name": "Сайёр қабул",
+          "link": "/news?category=sayyor-qabul"
+        },
+        {
           "name": "Ҳоким ўринбосарлари",
           "link": "/hokim-orinbosarlari"
         },
@@ -260,6 +272,10 @@
         {
           "name": "Governor",
           "link": "/en/hokim"
+        },
+        {
+          "name": "Mobile reception",
+          "link": "en/news?category=sayyor-qabul"
         },
         {
           "name": "Deputy governors",

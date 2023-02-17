@@ -40,8 +40,7 @@ export default function Meetings() {
             <span
               className='cursor-pointer'
               onClick={() => {
-                dispatch(setActiveCategory('uchrashuv'));
-                navigate(`${replaceKrill(activeLang)}/news`);
+                navigate(`${replaceKrill(activeLang)}/news?category=uchrashuv`);
               }}
             >
               {homeTranslation.all[activeLang]}

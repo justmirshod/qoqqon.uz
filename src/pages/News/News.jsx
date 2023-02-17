@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllNews } from '../../store/api/newsSlice.api';
 import {
-  // useNavigate,
-  // createSearchParams,
-  // useSearchParams,
+  useNavigate,
+  createSearchParams,
+  useSearchParams,
   Link,
 } from 'react-router-dom';
 import { Container } from '../../layouts';
 import NewsItem from './NewsItem';
 import Categories from '../../components/Categories/Categories';
 import Pagination from '../../components/Pagination/Pagination';
-import { setCategoryPageIndex } from '../../store/api/categoriesSlice.api';
+import {
+  setActiveCategory,
+  setCategoryPageIndex,
+} from '../../store/api/categoriesSlice.api';
 import Loader from '../../components/Loader/Loader';
 
 //translations
@@ -21,10 +24,12 @@ import { replaceKrill } from '../../config/config';
 
 function News() {
   const { news, loading } = useSelector((state) => state.news);
+  const navigate = useNavigate();
   const { activeCategory, categories, query } = useSelector(
     (state) => state.newsCategories
   );
   const { activeLang } = useSelector((state) => state.language);
+  const [searchParams] = useSearchParams();
   const [showFilters, setShowFilter] = useState(false);
 
   const dispatch = useDispatch();
@@ -41,6 +46,16 @@ function News() {
   const activePageIndex = handleActiveCategoryPageIndex(activeCategory);
 
   useEffect(() => {
+    const category = searchParams.get('category');
+    if (!category) {
+      dispatch(setActiveCategory(activeCategory));
+      return;
+    }
+    dispatch(setActiveCategory(searchParams.get('category')));
+    //eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
     if (activePageIndex === undefined) return;
     setShowFilter(false);
     dispatch(
@@ -50,26 +65,20 @@ function News() {
         page: activePageIndex ? activePageIndex + 1 : 1,
       })
     );
+    handleRouteSubmit();
     //eslint-disable-next-line
   }, [activePageIndex, activeCategory, query]);
 
-  // const handleRouteSubmit = (e) => {
-  //   e.preventDefault();
-  //   const params = {
-  //     category: query,
-  //     search,
-  //     page,
-  //     page_size,
-  //   };
-  //   if (params.search === '') {
-  //     delete params.search;
-  //   }
-  //   const options = {
-  //     pathname: '/news',
-  //     search: `?${createSearchParams(params)}`,
-  //   };
-  //   navigate(options, { replace: true });
-  // };
+  const handleRouteSubmit = () => {
+    const params = {
+      category: activeCategory,
+    };
+    const options = {
+      pathname: replaceKrill(activeLang) + '/news',
+      search: `?${createSearchParams(params)}`,
+    };
+    navigate(options, { replace: true });
+  };
 
   if (showFilters) {
     document.body.scrollTop = 0; // For Safari
