@@ -5,6 +5,8 @@ import Loader from '../../components/Loader/Loader';
 import MoreNews from '../../components/MoreNews/MoreNews';
 import { Container } from '../../layouts';
 import { fetchSingleNews } from '../../store/api/siingleNewsSlice.api';
+import { handleDateTime } from '../../config/config';
+import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
 
 function SingleNews() {
   const { id } = useParams();
@@ -12,66 +14,13 @@ function SingleNews() {
   const { singleNews, loading, success } = useSelector(
     (state) => state.singleNews
   );
+  const { activeLang } = useSelector((state) => state.language);
 
   useEffect(() => {
     dispatch(fetchSingleNews(id));
 
     //eslint-disable-next-line
   }, []);
-
-  const handleDateTime = (dateString) => {
-    const months = {
-      en: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
-      ru: [
-        'Январь',
-        'Февраль',
-        'Март',
-        'Апрель',
-        'Май',
-        'Июнь',
-        'Июль',
-        'Август',
-        'Сентябрь',
-        'Октябрь',
-        'Ноябрь',
-        'Декабрь',
-      ],
-      uz: [
-        'Yanvar',
-        'Fevral',
-        'Mart',
-        'Aprel',
-        'May',
-        'Iyun',
-        'Iyul',
-        'Avgust',
-        'Sentabr',
-        'Oktabr',
-        'Noyabr',
-        'Dekabr',
-      ],
-    };
-    const date = new Date(dateString);
-    const monthIndex = date.getMonth();
-    const monthName = months.uz[monthIndex];
-
-    const day = date.getDate();
-    const year = date.getFullYear();
-    return monthName + ' ' + day + ', ' + year;
-  };
 
   if (!singleNews.id) return;
 
@@ -83,14 +32,16 @@ function SingleNews() {
         <div className='single-news flex min-[0px]:flex-col  lg:flex-row gap-[70px]'>
           <div className='single-news__left-side min-[0px]:w-full lg:w-2/3 xl:w-3/4'>
             <p className='news-title text-[#33354d] min-[0px]:text-[18px] mt-4 lg:text-[25px] mb-[30px]'>
-              {singleNews?.translations?.uz?.title}
+              {activeLang === 'ўз'
+                ? latinToCyrillic(singleNews?.translations?.uz?.title)
+                : singleNews?.translations[activeLang]?.title}
             </p>
 
             <img className='rounded-md w-full' src={singleNews?.image} alt='' />
-            <div className='bottom-side'>
+            <div className='bottom-side mt-2'>
               <div className='news-item__right-side--details flex text-[0.875rem] mb-5 text-[#9397ad]'>
-                <p className='details-date mr-5 '>
-                  {handleDateTime(singleNews.created_at)}
+                <p className='details-date mr-5'>
+                  {handleDateTime(singleNews.created_at, activeLang)}
                 </p>
                 <p className='detail-views'>
                   <i className='fa-solid fa-eye '></i>

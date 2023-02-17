@@ -91,7 +91,7 @@ function Categories({ setShowFilter, showFilters }) {
           </button>
         </div>
         <div className='categories-list mt-5 p-4 pt-6 border rounded-md border-[#e2e5f1]'>
-          <p className='section-header pb-4 text-[22px] '>
+          <p className='section-header pb-4 text-[22px]'>
             {categoryTrans.categories[activeLang]}
           </p>
 

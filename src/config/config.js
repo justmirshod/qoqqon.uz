@@ -109,7 +109,9 @@ const handleDateTime = (dateString, activeLang) => {
   };
   const date = new Date(dateString);
   const monthIndex = date.getMonth();
-  const monthName = months[activeLang][monthIndex];
+  const monthName = months[activeLang]?.find(
+    (_, index) => index === monthIndex
+  );
 
   const day = date.getDate();
   const year = date.getFullYear();
