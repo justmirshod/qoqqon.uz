@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
@@ -11,6 +11,7 @@ import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
 function SingleNews() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const contentRef = useRef();
   const { singleNews, loading, success } = useSelector(
     (state) => state.singleNews
   );
@@ -23,6 +24,17 @@ function SingleNews() {
   }, []);
 
   if (!singleNews.id) return;
+
+  if (contentRef.current && activeLang === 'ўз') {
+    const list = contentRef.current.children;
+    for (const e of list) {
+      if (e.tagName === 'P' || e.tagName === 'h1') {
+        if (e.textContent !== '') {
+          e.textContent = latinToCyrillic(e.textContent);
+        }
+      }
+    }
+  }
 
   return (
     <Container className='mb-10'>
@@ -52,6 +64,7 @@ function SingleNews() {
             <div className='w-[100px] h-[5px] bg-gray-700 mb-5'></div>
             <div className='div single-news__left-side--content lg:w-[90%]'>
               <div
+                ref={contentRef}
                 className='news-all__content'
                 dangerouslySetInnerHTML={{
                   __html: singleNews?.translations?.uz?.content,

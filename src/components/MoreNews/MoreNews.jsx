@@ -35,12 +35,12 @@ function MoreNews({ slug, id, handleDateTime }) {
               }}
               className='item-image  min-[0px]:min-h-[250px] min-[0px]:bg-cover  min-[500px]:min-h-[200px] min-[850px]:min-h-[250px] lg:min-h-[240px] xl:min-h-[200px] lg:bg-[length:100%] bg-no-repeat rounded-md'
             ></div>
-            <p className='px-2 mt-2'>{item.translations?.uz?.title}</p>
+            <p className='px-2 mt-2'>{item.translations[activeLang]?.title}</p>
           </div>
           <div className='bottom-side p-2 mt-3'>
             <div className='news-item__right-side--details flex text-[0.875rem] mb-1 text-[#9397ad]'>
               <p className='details-date mr-5 '>
-                {handleDateTime(item.created_at)}
+                {handleDateTime(item.created_at, activeLang)}
               </p>
               <p className='detail-views'>
                 <i className='fa-solid fa-eye '></i>
