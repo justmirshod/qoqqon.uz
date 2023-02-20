@@ -8,7 +8,6 @@ import { Contact } from '../../components';
 import Loader from '../../components/Loader/Loader';
 import generalTranslations from '../../translations/general.json';
 import translations from './informations.json';
-import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
 
 export default function Informations() {
   const dispatch = useDispatch();

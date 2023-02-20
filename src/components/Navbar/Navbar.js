@@ -1,31 +1,26 @@
 import { Link } from 'react-router-dom';
 import { Container } from '../../layouts';
 import logo_icon from '../../assets/images/logo.png';
-import dark_mode_icon from '../../assets/icons/night-mode.png';
-import light_mode_icon from '../../assets/icons/sun.png';
 import { useSelector, useDispatch } from 'react-redux';
 import NavbarRoutes from './NavbarRoutes';
-import { setTheme, setShowLangs, setLang } from './navbar_slice';
+import { setShowLangs, setLang } from './navbar_slice';
 import routes from '../../translations/routes.json';
-import MiniNavbarItem from '../MiniNavbar/MiniNavbarItem';
 import MiniNavbar from '../MiniNavbar/MiniNavbar';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { replaceKrill, adaptBtn, onlineUrl } from '../../config/config';
+import { adaptBtn, onlineUrl } from '../../config/config';
 import { v4 } from 'uuid';
 
 const langs = ['ўз', 'uz', 'en', 'ru'];
 
 const Navbar = () => {
-  const { isLangLoading, activeLang, activeTheme, showLangs } = useSelector(
+  const { isLangLoading, activeLang, showLangs } = useSelector(
     (state) => state.language
   );
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const lagnPath = location.pathname.split('/')[1];
 
   useEffect(() => {
     document.body.style.overflow = 'initial';
