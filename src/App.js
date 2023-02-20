@@ -7,8 +7,6 @@ import SingleNews from './pages/SingleNews/SingleNews';
 import Management from './pages/Management/Management';
 import SingleGovernor from './pages/SingleGovernor/SingleGovernor';
 import GeneralInfo from './pages/GeneralInfo/GeneralInfo';
-import InterestingPlaces from './pages/InterestingPlaces/InterestingPlaces';
-import Place from './pages/InterestingPlaces/Place/Place';
 import { GovernorPowers, Home, ManagerAsistant, Procedure } from './pages';
 import { Navbar, UniversalRoute } from './components';
 import { v4 } from 'uuid';
@@ -18,6 +16,7 @@ import Footer from './components/Footer/Footer';
 import { setShowLangs } from './components/Navbar/navbar_slice';
 import { useDispatch } from 'react-redux';
 import Governors from './pages/Governors/Governors';
+import Informations from './pages/Informations/Informations';
 
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
@@ -53,15 +52,6 @@ function App() {
                     }
                   />
                   <Route
-                    path={handleRoutes(lang, '/interesting-places/:id')}
-                    element={
-                      <UniversalRoute>
-                        <Place />
-                      </UniversalRoute>
-                    }
-                    loading={true}
-                  />
-                  <Route
                     path={handleRoutes(lang, '/kengash-deputies')}
                     element={
                       <UniversalRoute>
@@ -79,6 +69,14 @@ function App() {
                     }
                     loading={true}
                   />
+                  <Route
+                    path={handleRoutes(lang, '/information-service/')}
+                    element={
+                      <UniversalRoute>
+                        <Informations />
+                      </UniversalRoute>
+                    }
+                  />
 
                   <Route
                     path={handleRoutes(lang, '/general-information')}
@@ -89,15 +87,7 @@ function App() {
                     }
                     loading={true}
                   />
-                  <Route
-                    path={handleRoutes(lang, '/interesting-places')}
-                    element={
-                      <UniversalRoute>
-                        <InterestingPlaces />
-                      </UniversalRoute>
-                    }
-                    loading={true}
-                  />
+
                   <Route
                     path={handleRoutes(lang, '/news')}
                     element={
@@ -155,15 +145,7 @@ function App() {
                     }
                     loading={true}
                   />
-                  <Route
-                    path={handleRoutes(lang, '/interesting-places')}
-                    element={
-                      <UniversalRoute>
-                        <InterestingPlaces />
-                      </UniversalRoute>
-                    }
-                    loading={true}
-                  />
+
                   <Route
                     path={handleRoutes(lang, '/news')}
                     element={

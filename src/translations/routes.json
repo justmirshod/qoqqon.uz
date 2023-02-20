@@ -20,7 +20,10 @@
           "name": "Hokim vakolatlari",
           "link": "/uz/powers-of-governor"
         },
-
+        {
+          "name": "Hokim qarorlari",
+          "link": "uz/news?category=hokim-qarorlari"
+        },
         {
           "name": "Fuqarolarni qabul qiish tartibi",
           "link": "/uz/procedure"
@@ -37,19 +40,15 @@
       ]
     },
     {
-      "name": "Axborot xizmati",
+      "name": "Matbuot markazi",
       "links": [
         {
           "name": "Yangiliklar",
           "link": "uz/news"
         },
         {
-          "name": "Fotojamlanmalar",
-          "link": "uz/photo-galery"
-        },
-        {
-          "name": "Videojamlanmalar",
-          "link": "uz/video-galery"
+          "name": "Axborot xizmati",
+          "link": "uz/information-service"
         }
       ]
     },
@@ -59,10 +58,6 @@
         {
           "name": "Tuman deputatlari",
           "link": "uz/kengash-deputies"
-        },
-        {
-          "name": "Qabul qilingan hujjatlar",
-          "link": "uz/accepted-documents"
         }
       ]
     },
@@ -76,10 +71,6 @@
         {
           "name": "Tuman reytingi",
           "link": "uz/indicator"
-        },
-        {
-          "name": "Qiziqarli joylar",
-          "link": "uz/interesting-places"
         },
         {
           "name": "Tuman xaritasi",
@@ -108,7 +99,10 @@
           "name": "Полномочия мэра",
           "link": "/ru/powers-of-governor"
         },
-
+        {
+          "name": "Решения мэра",
+          "link": "ru/news?category=hokim-qarorlari"
+        },
         {
           "name": "Порядок приема граждан",
           "link": "/ru/procedure"
@@ -125,19 +119,15 @@
       ]
     },
     {
-      "name": "Информационная служба",
+      "name": "Пресс центр",
       "links": [
         {
           "name": "Новости",
           "link": "ru/news"
         },
         {
-          "name": "Фотоколлекции",
-          "link": "ru/photo-galery"
-        },
-        {
-          "name": "Видео сборники",
-          "link": "ru/video-galery"
+          "name": "Информационная служба",
+          "link": "ru/information-service"
         }
       ]
     },
@@ -147,10 +137,6 @@
         {
           "name": "Районные депутаты",
           "link": "ru/kengash-deputies"
-        },
-        {
-          "name": "Принятые документы",
-          "link": "ru/accepted-documents"
         }
       ]
     },
@@ -164,10 +150,6 @@
         {
           "name": "Рейтинг района",
           "link": "ru/indicator"
-        },
-        {
-          "name": "Интересные места",
-          "link": "ru/interesting-places"
         },
         {
           "name": "Карта района",
@@ -197,7 +179,10 @@
           "name": "Ҳоким ваколатлари",
           "link": "/powers-of-governor"
         },
-
+        {
+          "name": "Ҳоким қарорлари",
+          "link": "/news?category=hokim-qarorlari"
+        },
         {
           "name": "Фуқароларни қабул қииш тартиби",
           "link": "/procedure"
@@ -214,19 +199,15 @@
       ]
     },
     {
-      "name": "Aхборот хизмати",
+      "name": "Матбуот маркази",
       "links": [
         {
           "name": "Янгииликлар",
           "link": "/news"
         },
         {
-          "name": "Фотожамланмалар",
-          "link": "/photo-galery"
-        },
-        {
-          "name": "Видеожамланмалар",
-          "link": "/video-galery"
+          "name": "Ахборот хизмати",
+          "link": "/information-service"
         }
       ]
     },
@@ -236,10 +217,6 @@
         {
           "name": "Туман депутатлари",
           "link": "/kengash-deputies"
-        },
-        {
-          "name": "Қабул қилинган ҳужжатлар",
-          "link": "/accepted/documents"
         }
       ]
     },
@@ -253,10 +230,6 @@
         {
           "name": "Туман рейтинги",
           "link": "/indicator"
-        },
-        {
-          "name": "Қизиқарли жойлар",
-          "link": "/interesting-places"
         },
         {
           "name": "Туман харитаси",
@@ -286,6 +259,10 @@
           "link": "/en/powers-of-governor"
         },
         {
+          "name": "Governor decisions",
+          "link": "en/news?category=hokim-qarorlari"
+        },
+        {
           "name": "The procedure of receiving citizens",
           "link": "/en/procedure"
         },
@@ -307,12 +284,8 @@
           "link": "/en/news"
         },
         {
-          "name": "Photo galery",
-          "link": "/en/photo-galery"
-        },
-        {
-          "name": "Video galery",
-          "link": "/en/video-galery"
+          "name": "Information service",
+          "link": "/en/information-service"
         }
       ]
     },
@@ -322,10 +295,6 @@
         {
           "name": "Kengash deputies",
           "link": "/en/kengash-deputies"
-        },
-        {
-          "name": "Accepted documents",
-          "link": "/en/accepted/documents"
         }
       ]
     },
@@ -339,10 +308,6 @@
         {
           "name": "Region ratiing",
           "link": "/en/indicator"
-        },
-        {
-          "name": "Interesting places",
-          "link": "/en/interesting-places"
         },
         {
           "name": "Region map",

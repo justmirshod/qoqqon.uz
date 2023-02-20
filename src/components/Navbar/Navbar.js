@@ -11,7 +11,7 @@ import MiniNavbarItem from '../MiniNavbar/MiniNavbarItem';
 import MiniNavbar from '../MiniNavbar/MiniNavbar';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { replaceKrill, adaptBtn } from '../../config/config';
+import { replaceKrill, adaptBtn, onlineUrl } from '../../config/config';
 import { v4 } from 'uuid';
 
 const langs = ['ўз', 'uz', 'en', 'ru'];
@@ -76,26 +76,6 @@ const Navbar = () => {
 
                 <div className='flex items-center'>
                   <div
-                    className={`${
-                      activeTheme === 'dark' ? '' : ''
-                    } duration-200 w-[50px] h-[25px] rounded-2xl flex items-center mr-3 bg-blue-600 box-border`}
-                    onClick={() => {
-                      if (activeTheme === 'light') {
-                        dispatch(setTheme('dark'));
-                      } else {
-                        dispatch(setTheme('light'));
-                      }
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeTheme === 'dark'
-                          ? 'translate-x-[130%]'
-                          : 'translate-x-[20%] '
-                      } duration-200 w-[20px] h-[20px] rounded-full translate-y-[0.4px] bg-[#fff]`}
-                    ></div>
-                  </div>
-                  <div
                     className='mr-3 relative'
                     onClick={(e) => {
                       dispatch(setShowLangs(!showLangs));
@@ -126,9 +106,11 @@ const Navbar = () => {
                   </div>
 
                   <button className='bg-blue-600 hover:bg-blue-700 hidden xl:block rounded-lg py-2 px-3'>
-                    <Link
-                      to={`/${activeLang}/contacts`}
+                    <a
+                      target='_blank'
+                      href={`${onlineUrl}`}
                       className='text-[#fff] text-center'
+                      rel='noreferrer'
                     >
                       {activeLang === 'ўз'
                         ? 'Боғланиш'
@@ -137,7 +119,7 @@ const Navbar = () => {
                         : activeLang === 'en'
                         ? 'Contact'
                         : 'Контакт'}
-                    </Link>
+                    </a>
                   </button>
                   <button
                     className='w-10 h-10 xl:hidden'

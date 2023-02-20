@@ -16,6 +16,7 @@ import leaderSlice from './api/leaderSlice.api';
 import governorsSlice from './api/governorsSlice.api';
 import singleGovernorSlice from './api/singleGovernorSlice.api';
 import map from '../pages/Map/MapSlice';
+import information from '../pages/Informations/information_slice';
 
 const store = configureStore({
   reducer: {
@@ -34,6 +35,7 @@ const store = configureStore({
     leader: leaderSlice,
     governors: governorsSlice,
     singleGovernor: singleGovernorSlice,
+    information,
   },
 });
 

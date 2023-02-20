@@ -1,22 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MiniContainer } from '../../layouts';
-import { fetchGovernorPowers } from './power_slice';
+import { fetchInformations } from './information_slice';
 import { replaceKrill } from '../../config/config';
 import { Link } from 'react-router-dom';
 import { Contact } from '../../components';
 import Loader from '../../components/Loader/Loader';
 import generalTranslations from '../../translations/general.json';
-import translations from './power.json';
+import translations from './informations.json';
 import { latinToCyrillic } from '../../hooks/useLatinToCrylic';
-export default function GovernorPowers() {
+
+export default function Informations() {
   const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state.power);
+  const { data, loading } = useSelector((state) => state.information);
   const { activeLang } = useSelector((state) => state.language);
+  const texts = useRef();
 
   useEffect(() => {
     if (data.id) return;
-    dispatch(fetchGovernorPowers());
+    dispatch(fetchInformations());
 
     //eslint-disable-next-line
   }, []);
@@ -38,13 +40,16 @@ export default function GovernorPowers() {
         {loading ? (
           'Loading'
         ) : (
-          <div className='text-lg mb-10 text-gray-600 leading-loose'>
-            {activeLang === 'ўз'
-              ? latinToCyrillic(
-                  data?.translations?.uz?.text.replace(/<[^>]*>/g, '')
-                )
-              : data?.translations[activeLang]?.text.replace(/<[^>]*>/g, '')}
-          </div>
+          <div
+            className='text-lg mb-10 text-gray-600 leading-loose'
+            ref={texts}
+            dangerouslySetInnerHTML={{
+              __html:
+                activeLang === 'ўз'
+                  ? data?.translations.uz?.text
+                  : data?.translations[activeLang]?.text,
+            }}
+          ></div>
         )}
       </MiniContainer>
       <Contact />
