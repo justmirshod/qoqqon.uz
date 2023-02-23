@@ -82,6 +82,14 @@ function Categories({ setShowFilter, showFilters }) {
             <input
               className='bg-[transparent] border rounded-md border-[#e2e5f1]  focus:outline-none  focus:shadow-searchShadow focus:border-[#6366f159] text-[14px] px-2 py-3  pr-9  w-full transition-shadow duration-125 delay-74 ease-linear'
               type='text'
+              onChange={(e) => {
+                if (e.target.value === '') {
+                  dispatch(setQuery(''));
+                  dispatch(
+                    setCategoryPageIndex({ slug: activeCategory, index: 0 })
+                  );
+                }
+              }}
               placeholder={categoryTrans.search[activeLang]}
               name='query'
             />
