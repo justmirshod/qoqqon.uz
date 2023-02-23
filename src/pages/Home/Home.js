@@ -45,7 +45,7 @@ const Home = () => {
         </Container>
       </div>
       <LatestNews />
-      <Container>
+      <Container className='relative'>
         <div className='bg-gray-100'>
           <h1 className='text-2xl mt-10'>Qo'qon shahar xaritasi</h1>
           <Map />
