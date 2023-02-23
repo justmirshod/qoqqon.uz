@@ -2,7 +2,7 @@ export const latinToCyrillic = (text) => {
   const latinChars =
     'a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z , . ; : ! ? - _ + = ( ) [ ] { } < > @ # $ % & * / \\ | ^ ~';
   const cyrillicChars =
-    'а б ц д е ф г ҳ и ж к л м н о п қ р с т у в в х й з А Б Ц Д Е Ф Г Ҳ И Ж К Л М Н О П Қ Р С Т У В В Х Й З   . , : ; ! ? - _ + = ( ) [ ] { } < > @ # $ % & * /  | ^ ~';
+    'а б ц д е ф г ҳ и ж к л м н о п қ р с т у в в х й з А Б Ц Д Е Ф Г Ҳ И Ж К Л М Н О П Қ Р С Т У В В Х Й З , . ; : ! ? - _ + = ( ) [ ] { } < > @ # $ % & * / \\ | ^ ~';
 
   const sortedTextArray = text.split('').map((item, index, arr) => {
     if (arr[index] === 's' && arr[index + 1] === 'h') {
@@ -20,6 +20,9 @@ export const latinToCyrillic = (text) => {
     } else if (arr[index] === 'o' && arr[index + 1] === '‘') {
       arr.splice(index + 1, 1);
       return 'ў';
+    } else if (arr[index] === 'O' && arr[index + 1] === '‘') {
+      arr.splice(index + 1, 1);
+      return 'Ў';
     } else if (arr[index] === 'O' && arr[index + 1] === '‘') {
       arr.splice(index + 1, 1);
       return 'Ў';
@@ -47,14 +50,15 @@ export const latinToCyrillic = (text) => {
     } else if (arr[index] === 'Y' && arr[index + 1] === 'e') {
       arr.splice(index + 1, 1);
       return 'Е';
-    } else if (arr[index] === 'y' && arr[index + 1] === 'o') {
-      arr.splice(index + 1, 1);
-      return 'ё';
-    } else if (arr[index] === 'Y' && arr[index + 1] === 'o') {
-      arr.splice(index + 1, 1);
-      return 'Ё';
     }
     return item;
+    // else if (arr[index] === 'y' && arr[index + 1] === 'o') {
+    //   arr.splice(index + 1, 1);
+    //   return 'ё';
+    // } else if (arr[index] === 'Y' && arr[index + 1] === 'o') {
+    //   arr.splice(index + 1, 1);
+    //   return 'Ё';
+    // }
   });
 
   const result = sortedTextArray

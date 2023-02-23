@@ -16,7 +16,7 @@ import Footer from './components/Footer/Footer';
 import { setShowLangs } from './components/Navbar/navbar_slice';
 import { useDispatch } from 'react-redux';
 import Governors from './pages/Governors/Governors';
-import Informations from './pages/Informations/Informations';
+import Informations from './pages/Informations/Informations.jsx';
 
 const languages = ['uz', 'en', 'ru', 'ўз'];
 
