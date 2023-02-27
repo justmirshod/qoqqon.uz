@@ -98,10 +98,10 @@
   ],
   "map": {
     "translations": {
-      "uz": "Qo'qon tumani xaritasi",
-      "ўз": "Қўқон тумани харитаси",
-      "ru": "Карта Коканского района",
-      "en": "Map of Kokan district"
+      "uz": "Qo'qon shahar xaritasi",
+      "ўз": "Қўқон шаҳар харитаси",
+      "ru": "Карта города Кокан",
+      "en": "Map of Kokan city"
     }
   }
 }

@@ -12,6 +12,7 @@ import Map from '../Map/Map';
 import Meetings from './components/Meetings/Meetings';
 import Faq from './components/Faq/Faq';
 import Contact from '../../components/Contact/Contact';
+import mapTrans from '../../translations/map.json';
 
 const Home = () => {
   const { activeLang } = useSelector((state) => state.language);
@@ -47,7 +48,9 @@ const Home = () => {
       <LatestNews />
       <Container className='relative'>
         <div className='bg-gray-100'>
-          <h1 className='text-2xl mt-10'>Qo'qon shahar xaritasi</h1>
+          <h1 className='text-2xl mt-10'>
+            {mapTrans.map.translations[activeLang]}
+          </h1>
           <Map />
         </div>
       </Container>
