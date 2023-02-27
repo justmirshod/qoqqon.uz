@@ -1,0 +1,107 @@
+{
+  "sideInfo": [
+    {
+      "translations": {
+        "uz": "Maydon",
+        "ўз": "Майдон",
+        "ru": "Квадрат",
+        "en": "Area"
+      },
+      "data": "1940"
+    },
+    {
+      "translations": {
+        "uz": "Binolar",
+        "ўз": "Бинолар",
+        "ru": "Здания",
+        "en": "Buildings"
+      },
+      "data": "3400"
+    },
+    {
+      "translations": {
+        "uz": "Kvartiralar",
+        "ўз": "Квартиралар",
+        "ru": "Апартаменты",
+        "en": "Apartments"
+      },
+      "data": "24000"
+    },
+    {
+      "translations": {
+        "uz": "Ko'chalar",
+        "ўз": "Кўчалар",
+        "ru": "Улицы",
+        "en": "Streets"
+      },
+      "data": "1242"
+    },
+    {
+      "translations": {
+        "uz": "Aholi",
+        "ўз": "Аҳоли",
+        "ru": "Население",
+        "en": "Population"
+      },
+      "data": "54000"
+    },
+    {
+      "translations": {
+        "uz": "Do'konlar",
+        "ўз": "Дўконлар",
+        "ru": "Магазины",
+        "en": "Stores"
+      },
+      "data": "1423"
+    },
+    {
+      "translations": {
+        "uz": "Ovqatlanish joylari",
+        "ўз": "Овқатланиш жойлари",
+        "ru": "Обеденные зоны",
+        "en": "Dining areas"
+      },
+      "data": "1221"
+    }
+  ],
+  "mapnav": [
+    {
+      "uz": "Hammmasi",
+      "ўз": "Ҳамммаси",
+      "ru": "Все",
+      "en": "All"
+    },
+    {
+      "uz": "1-sektor",
+      "ўз": "1-сектор",
+      "ru": "1-сектор",
+      "en": "1-section"
+    },
+    {
+      "uz": "2-sektor",
+      "ўз": "2-сектор",
+      "ru": "2-сектор",
+      "en": "2-section"
+    },
+    {
+      "uz": "3-sektor",
+      "ўз": "3-сектор",
+      "ru": "3-сектор",
+      "en": "3-section"
+    },
+    {
+      "uz": "4-sektor",
+      "ўз": "4-сектор",
+      "ru": "4-сектор",
+      "en": "4-section"
+    }
+  ],
+  "map": {
+    "translations": {
+      "uz": "Qo'qon tumani xaritasi",
+      "ўз": "Қўқон тумани харитаси",
+      "ru": "Карта Коканского района",
+      "en": "Map of Kokan district"
+    }
+  }
+}

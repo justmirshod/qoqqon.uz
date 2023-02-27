@@ -30,14 +30,14 @@ function Leader() {
     });
     return newArray?.map((item) => {
       return (
-        <div key={item.id} className='flex gap-3 items-center'>
+        <div key={item.id} className='flex gap-3 flex-col md:flex-row'>
           <p className='text-[#33354d] leading-8'>
             {activeLang === 'ўз'
               ? latinToCyrillic(item?.translations?.uz?.name)
               : item?.translations[activeLang]?.name}
           </p>
           <a
-            className='text-[18px] hover:text-[#6366f1]'
+            className='text-[18px] hover:text-[#6366f1] min-w-[200px] md:mb-0 mb-5'
             href={item?.translations?.uz?.link}
           >
             {item?.translations?.uz?.link.split('tel:')[1]}
@@ -79,9 +79,9 @@ function Leader() {
   if (!hokim.results) return;
 
   return (
-    <div className='leader flex gap-3'>
-      <div className='leader-infos mb-40 min-[0px]:w-3/5'>
-        <h1 className='text-[60px] text-[#33354d] '>
+    <div className='leader flex gap-3 flex-col-reverse md:flex-row'>
+      <div className='leader-infos mb-40 w-full md:w-3/5'>
+        <h1 className=' text-[30px] lg:text-[60px] text-[#33354d] '>
           {activeLang === 'ўз'
             ? latinToCyrillic(hokim?.results[0]?.translations?.uz?.full_name)
             : hokim?.results[0]?.translations[activeLang].full_name}
@@ -104,7 +104,7 @@ function Leader() {
           </div>
         </div>
       </div>
-      <div className='leader-image min-[0px]:w-2/5'>
+      <div className='leader-image w-full md:w-2/5'>
         <img
           className='ml-auto rounded-lg'
           src={hokim.results[0].image}

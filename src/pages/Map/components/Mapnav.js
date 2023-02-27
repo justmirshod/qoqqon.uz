@@ -1,16 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setAnim, setSector } from '../MapSlice';
+import data from '../../../translations/map.json';
 
 const sectors = ['Hammasi', '1-sektor', '2-sektor', '3-sektor', '4-sektor'];
 
 const Mapnav = () => {
   const { sector } = useSelector((state) => state.map);
+  const { activeLang } = useSelector((state) => state.language);
 
   const dispatch = useDispatch();
 
   return (
     <div className='mb-5 flex flex-wrap justify-center'>
-      {sectors.map((item, index) => (
+      {data.mapnav.map((item, index) => (
         <button
           key={index}
           disabled={index === sector}
@@ -24,7 +26,7 @@ const Mapnav = () => {
             dispatch(setSector(index));
           }}
         >
-          {item}
+          {item[activeLang]}
         </button>
       ))}
     </div>

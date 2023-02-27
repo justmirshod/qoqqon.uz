@@ -2,9 +2,11 @@ import Information from './Information';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAnimation, setMahallaId, setModal } from '../MapSlice';
 import { qoqonMap } from '../helpers/qoqonMap';
+import { latinToCyrillic } from '../../../hooks/useLatinToCrylic';
 
 const SideInfo = () => {
   const { sector, modal } = useSelector((state) => state.map);
+  const { activeLang } = useSelector((state) => state.language);
   const dispatch = useDispatch();
 
   const getID = (id) => {
@@ -27,7 +29,7 @@ const SideInfo = () => {
             key={index}
             onClick={() => getID(item.id)}
           >
-            {item.name}
+            {activeLang === 'ўз' ? latinToCyrillic(item.name) : item.name}
           </h1>
         ))
       ) : (

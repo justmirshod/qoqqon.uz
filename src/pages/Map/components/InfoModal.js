@@ -2,6 +2,7 @@ import { useEffect, memo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMahallaInfo } from '../MapSlice';
+import { useLocation } from 'react-router-dom';
 
 const infoData = [
   { name: 'population', data: 'Aholi' },
@@ -20,6 +21,7 @@ const InfoModal = () => {
     (state) => state.map
   );
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(getMahallaInfo(mahallaId));
@@ -28,10 +30,13 @@ const InfoModal = () => {
   const { loading, data } = mahallaInfo;
 
   useEffect(() => {
+    if (location.pathname === '/') return;
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+
+    //eslint-disable-next-line
   }, []);
 
   return (
