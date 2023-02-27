@@ -13,7 +13,7 @@ export default function FaqItem({ translations, id }) {
     >
       <div className='flex items-center justify-between'>
         <h1
-          className='font-semibold text-[20px] md:w-full'
+          className='font-semibold text-[20px] md:w-full w-[96%]'
           onClick={() => setOpen((prev) => !prev)}
         >
           {activeLang === 'ўз'
